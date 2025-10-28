@@ -1,8 +1,59 @@
-<div>
-  <style>.pp-8DFNBSWNJ4CP8{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
-  <form action="https://www.paypal.com/ncp/payment/8DFNBSWNJ4CP8" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
-    <input class="pp-8DFNBSWNJ4CP8" type="submit" value="Comprar ahora" />
-    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
-    <section style="font-size: 0.75rem;"> Con la tecnología de <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
-  </form>
-</div>
+<!-- SDK de PayPal (MXN). Reemplaza TU_CLIENT_ID -->
+<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID&currency=MXN&components=buttons"></script>
+
+<section style="max-width:680px;margin:auto;padding:16px">
+  <h2>Servicio de mandado</h2>
+  <p>Precio: <strong>$59 MXN</strong></p>
+
+  <!-- Contenedor de botones -->
+  <div id="paypal-button-container"></div>
+
+  <!-- Mensajes -->
+  <div id="msg" style="margin-top:14px;font-weight:600"></div>
+</section>
+
+<script>
+  const MONTO = "59.00";
+  const $msg = document.getElementById('msg');
+
+  paypal.Buttons({
+    style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
+
+    // Crear la orden (monto fijo)
+    createOrder: (data, actions) => {
+      return actions.order.create({
+        purchase_units: [{
+          amount: { value: MONTO, currency_code: 'MXN' },
+          description: 'Servicio de mandado ($59)'
+        }]
+      });
+    },
+
+    // Si el usuario aprueba y PayPal captura el pago
+    onApprove: (data, actions) => {
+      $msg.textContent = 'Procesando pago...';
+      return actions.order.capture().then((details) => {
+        if (details.status === 'COMPLETED') {
+          const nombre = details.payer?.name?.given_name || 'cliente';
+          const orderId = details.id;
+          $msg.innerHTML = `✅ Compra exitosa. Gracias, ${nombre}.<br>Orden: <code>${orderId}</code>`;
+          // Aquí puedes: abrir WhatsApp con la orden, guardar en Google Forms, etc.
+          // window.open('https://wa.me/52TU_NUMERO?text=' + encodeURIComponent(`Nueva orden ${orderId} por $${MONTO}`), '_blank');
+        } else {
+          $msg.textContent = '⚠️ Pago no completado. No se inició el servicio.';
+        }
+      });
+    },
+
+    // El usuario canceló
+    onCancel: () => {
+      $msg.textContent = '❌ Pago cancelado por el usuario. No se realizó la compra.';
+    },
+
+    // Error en el flujo
+    onError: (err) => {
+      console.error(err);
+      $msg.textContent = '❌ Error al procesar el pago. Intenta nuevamente.';
+    }
+  }).render('#paypal-button-container');
+</script>
