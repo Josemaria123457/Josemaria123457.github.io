@@ -3,64 +3,641 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pinonet – Pago seguro</title>
-</head>
-<body style="font-family: Arial; text-align: center; padding: 40px;">
+  <title>Creación de páginas web para negocios | Pinonet</title>
+  <style>
+    /* Paleta de colores y variables reutilizables */
+    :root {
+      --color-primary: #0f172a;
+      --color-secondary: #38bdf8;
+      --color-accent: #f97316;
+      --color-text: #1f2937;
+      --color-muted: #64748b;
+      --color-background: #f8fafc;
+      --radius-large: 28px;
+      --radius-medium: 20px;
+      font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+    }
 
-  <h1>Servicio de mandado</h1>
-  <p>Precio fijo: <strong>$59 MXN</strong></p>
+    /* Reinicio básico para consistencia */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-  <!-- Contenedor para el botón -->
-  <div id="paypal-button-container"></div>
+    body {
+      margin: 0;
+      color: var(--color-text);
+      background: var(--color-background);
+      line-height: 1.65;
+    }
 
-  <!-- Mensaje de estado -->
-  <div id="mensaje" style="margin-top: 20px; font-weight: bold;"></div>
+    a {
+      color: inherit;
+    }
 
-  <!-- SDK de PayPal (usa tu Client ID en lugar de TU_CLIENT_ID) -->
-  <script src="https://www.paypal.com/sdk/js?client-id=AZbQEnn8s_5BZiMYT24YBIYr3GhOksOsMmvhWbH2OPjJmuCvbQKeQ-FsXKxgriall7poBwzT2K70rncw&currency=MXN&components=buttons"></script>
+    /* Barra de navegación fija con enlaces a secciones */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(15, 23, 42, 0.85);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px clamp(20px, 5vw, 60px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+    }
 
-  <script>
-    const monto = "59.00";
-    const mensaje = document.getElementById('mensaje');
+    .brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: 0.03em;
+    }
 
-    paypal.Buttons({
-      style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
+    .menu {
+      display: flex;
+      gap: clamp(16px, 3vw, 36px);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+    }
 
-      // Crear orden
-      createOrder: (data, actions) => {
-        return actions.order.create({
-          purchase_units: [{
-            amount: { value: monto, currency_code: 'MXN' },
-            description: 'Servicio de mandado'
-          }]
-        });
-      },
+    .menu a {
+      color: #e2e8f0;
+      text-decoration: none;
+      position: relative;
+    }
 
-      // Cuando el pago se aprueba
-      onApprove: (data, actions) => {
-        mensaje.textContent = 'Procesando pago...';
-        return actions.order.capture().then((details) => {
-          if (details.status === 'COMPLETED') {
-            const nombre = details.payer?.name?.given_name || 'cliente';
-            mensaje.innerHTML = `✅ ¡Compra exitosa! Gracias, ${nombre}.<br>ID de orden: ${details.id}`;
-          } else {
-            mensaje.textContent = '⚠️ El pago no se completó.';
-          }
-        });
-      },
+    .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--color-secondary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
 
-      // Si el usuario cancela
-      onCancel: () => {
-        mensaje.textContent = '❌ Pago cancelado por el usuario.';
-      },
+    .menu a:hover::after,
+    .menu a:focus-visible::after {
+      transform: scaleX(1);
+    }
 
-      // Si hay error
-      onError: (err) => {
-        console.error(err);
-        mensaje.textContent = '❌ Error al procesar el pago. Intenta nuevamente.';
+    /* Botón reutilizable */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--color-secondary), #0284c7);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 18px 40px rgba(56, 189, 248, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 50px rgba(2, 132, 199, 0.45);
+    }
+
+    /* Cabecera hero con imagen decorativa */
+    header {
+      position: relative;
+      padding: clamp(120px, 28vh, 220px) clamp(20px, 8vw, 120px) clamp(100px, 18vh, 160px);
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.24), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(249, 115, 22, 0.18), transparent 60%),
+        linear-gradient(135deg, #111827, #1e293b);
+      color: #f8fafc;
+      overflow: hidden;
+    }
+
+    header::after {
+      /* Imagen decorativa en el hero */
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=1600&q=80')
+        no-repeat right center / clamp(260px, 40vw, 520px);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 620px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2.6vw, 1.2rem);
+      color: #e2e8f0;
+      margin-bottom: 32px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.18);
+      color: #f8fafc;
+      font-size: 0.85rem;
+      backdrop-filter: blur(6px);
+    }
+
+    /* Contenedor general de secciones */
+    main {
+      margin-top: -60px;
+      display: grid;
+      gap: 60px;
+      padding: 0 clamp(16px, 6vw, 80px) 120px;
+    }
+
+    section {
+      background: #fff;
+      border-radius: var(--radius-large);
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
+      padding: clamp(40px, 6vw, 70px);
+    }
+
+    section h2 {
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      margin: 0 0 24px;
+      text-align: center;
+      color: var(--color-primary);
+      letter-spacing: -0.01em;
+    }
+
+    section p {
+      color: var(--color-muted);
+    }
+
+    /* Rejillas responsivas reutilizables */
+    .grid {
+      display: grid;
+      gap: clamp(20px, 3vw, 32px);
+    }
+
+    @media (min-width: 768px) {
+      .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    .card {
+      background: linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(226, 232, 240, 0.65));
+      border-radius: var(--radius-medium);
+      padding: clamp(22px, 3vw, 28px);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--color-primary);
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+    }
+
+    /* Tarjetas con imagen destacada */
+    .image-card {
+      display: grid;
+      gap: 18px;
+    }
+
+    .image-card img {
+      width: 100%;
+      border-radius: var(--radius-medium);
+      height: clamp(180px, 26vw, 240px);
+      object-fit: cover;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: clamp(24px, 4vw, 50px);
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: clamp(8px, 2vw, 18px);
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(var(--color-secondary), var(--color-accent));
+      border-radius: 999px;
+    }
+
+    .timeline-step {
+      position: relative;
+      margin-bottom: clamp(22px, 4vw, 36px);
+      padding: clamp(20px, 3vw, 28px);
+      background: #fff;
+      border-radius: var(--radius-medium);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .timeline-step::before {
+      content: attr(data-step);
+      position: absolute;
+      left: calc(-1 * clamp(36px, 6vw, 52px));
+      top: 20px;
+      width: clamp(34px, 6vw, 44px);
+      height: clamp(34px, 6vw, 44px);
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid var(--color-secondary);
+      color: var(--color-primary);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .testimonials {
+      position: relative;
+    }
+
+    .testimonials::before {
+      content: '\201C';
+      position: absolute;
+      font-size: clamp(5rem, 20vw, 7rem);
+      color: rgba(56, 189, 248, 0.18);
+      top: clamp(-40px, -8vw, -30px);
+      left: clamp(-10px, -4vw, 0px);
+    }
+
+    .testimonial {
+      padding-left: clamp(18px, 4vw, 40px);
+      border-left: 4px solid rgba(56, 189, 248, 0.4);
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 16px;
+      color: var(--color-primary);
+    }
+
+    /* Sección de preguntas frecuentes */
+    details {
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: var(--radius-medium);
+      padding: clamp(14px, 2.5vw, 20px);
+      background: rgba(248, 250, 252, 0.9);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--color-secondary);
+      box-shadow: 0 18px 34px rgba(148, 163, 184, 0.25);
+    }
+
+    summary {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--color-primary);
+      outline: none;
+    }
+
+    summary::marker {
+      color: var(--color-secondary);
+    }
+
+    footer {
+      background: #0f172a;
+      color: #e2e8f0;
+      text-align: center;
+      padding: clamp(60px, 10vw, 90px) clamp(20px, 6vw, 60px);
+    }
+
+    footer a {
+      color: var(--color-secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Adaptaciones móviles para navegación */
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
       }
-    }).render('#paypal-button-container');
-  </script>
+
+      .menu {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de navegación con accesos rápidos a cada sección -->
+  <nav>
+    <div class="brand">Pinonet Studio</div>
+    <ul class="menu">
+      <li><a href="#beneficios">Beneficios</a></li>
+      <li><a href="#sectores">Sectores</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#planes">Planes</a></li>
+      <li><a href="#portafolio">Portafolio</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección hero para captar la atención principal -->
+  <header>
+    <div class="hero-content">
+      <div class="badges">
+        <span class="badge">Sitios rápidos y seguros</span>
+        <span class="badge">Estrategia digital completa</span>
+        <span class="badge">Soporte continuo</span>
+      </div>
+      <h1>Impulsa tu negocio con una página web profesional y memorable</h1>
+      <p>
+        Diseñamos experiencias digitales enfocadas en convertir visitas en clientes. Restaurantes, barberías, clínicas,
+        tiendas y servicios profesionales confían en Pinonet para lanzar sitios que inspiran y venden.
+      </p>
+      <a class="button" href="https://wa.me/521234567890" target="_blank" rel="noopener">Agenda una asesoría sin
+        costo</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Beneficios clave de contar con un sitio web -->
+    <section id="beneficios">
+      <h2>¿Por qué tu negocio necesita un sitio web?</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Disponibilidad 24/7</h3>
+          <p>Tus clientes consultan información, reservan y compran a cualquier hora, incluso cuando tu local está
+            cerrado.</p>
+        </article>
+        <article class="card">
+          <h3>Confianza profesional</h3>
+          <p>Un diseño moderno comunica credibilidad y transmite que tu negocio es organizado, serio y confiable.</p>
+        </article>
+        <article class="card">
+          <h3>Mayor alcance</h3>
+          <p>Capta clientes desde redes sociales y Google con un enlace que muestra todos tus servicios en un solo lugar.</p>
+        </article>
+        <article class="card">
+          <h3>Automatización inteligente</h3>
+          <p>Integraciones con chatbots, agendas, pagos y recordatorios que reducen tareas manuales y te ahorran tiempo.</p>
+        </article>
+        <article class="card">
+          <h3>Medición precisa</h3>
+          <p>Instalamos analíticos para entender qué funciona, optimizar campañas y mejorar tus resultados mes a mes.</p>
+        </article>
+        <article class="card">
+          <h3>Diseño adaptable</h3>
+          <p>Experiencia optimizada en móviles, tablets y computadoras para que tus clientes naveguen sin fricciones.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sectores en los que trabajamos con ejemplos visuales -->
+    <section id="sectores">
+      <h2>Sectores donde brillamos</h2>
+      <div class="grid cols-3">
+        <article class="card image-card">
+          <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=900&q=80" alt="Mesa de restaurante elegante">
+          <div>
+            <h3>Restaurantes &amp; cafeterías</h3>
+            <p>Menús interactivos, reservaciones y pedidos a domicilio integrados con WhatsApp o plataformas de envío.</p>
+          </div>
+        </article>
+        <article class="card image-card">
+          <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80" alt="Barbero trabajando con cliente">
+          <div>
+            <h3>Barberías &amp; salones</h3>
+            <p>Agenda en línea, portafolio de estilos y testimonios para inspirar confianza y llenar tu agenda cada semana.</p>
+          </div>
+        </article>
+        <article class="card image-card">
+          <img src="https://images.unsplash.com/photo-1606813902913-0e3c74f4401c?auto=format&fit=crop&w=900&q=80" alt="Clínica médica moderna">
+          <div>
+            <h3>Clínicas &amp; consultorios</h3>
+            <p>Formulario de citas, biografías de especialistas y recordatorios automáticos para reducir ausencias.</p>
+          </div>
+        </article>
+        <article class="card image-card">
+          <img src="https://images.unsplash.com/photo-1616628188505-4041c0adb67b?auto=format&fit=crop&w=900&q=80" alt="Boutique de ropa">
+          <div>
+            <h3>Boutiques &amp; tiendas</h3>
+            <p>Catálogos administrables, carritos simples y conexión con redes sociales para campañas estacionales.</p>
+          </div>
+        </article>
+        <article class="card image-card">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Equipo creativo trabajando">
+          <div>
+            <h3>Servicios profesionales</h3>
+            <p>Propuestas digitales, casos de éxito y contenido SEO para generar leads calificados cada semana.</p>
+          </div>
+        </article>
+        <article class="card image-card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Habitación de hotel boutique">
+          <div>
+            <h3>Hoteles &amp; turismo</h3>
+            <p>Reservaciones directas, experiencias locales y recorridos virtuales que enamoran a tus visitantes.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Características de valor agregado -->
+    <section id="portafolio">
+      <h2>Lo que incluye cada proyecto</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Diseño UX/UI personalizado</h3>
+          <p>Maquetamos cada página con prototipos interactivos y moodboards para que apruebes antes de programar.</p>
+        </article>
+        <article class="card">
+          <h3>Optimización SEO local</h3>
+          <p>Investigamos palabras clave de tu ciudad, configuramos meta etiquetas y contenido que posiciona en Google.</p>
+        </article>
+        <article class="card">
+          <h3>Integraciones estratégicas</h3>
+          <p>Conectamos tu web con CRM, pasarelas de pago, chat en vivo, email marketing y herramientas de analítica.</p>
+        </article>
+        <article class="card">
+          <h3>Velocidad y seguridad</h3>
+          <p>Hosting optimizado, certificados SSL y mejores prácticas para ofrecer tiempos de carga inferiores a 2s.</p>
+        </article>
+        <article class="card">
+          <h3>Entrenamiento y soporte</h3>
+          <p>Capacitamos a tu equipo para actualizar contenidos y brindamos soporte técnico con respuestas rápidas.</p>
+        </article>
+        <article class="card">
+          <h3>Contenido irresistible</h3>
+          <p>Redacción persuasiva, sesiones fotográficas opcionales y optimización de imágenes para captar la atención.</p>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top: clamp(28px, 6vw, 44px);">
+        <a class="button" href="https://pinonet.mx/portafolio" target="_blank" rel="noopener">Ver portafolio completo</a>
+      </div>
+    </section>
+
+    <!-- Descripción del proceso paso a paso -->
+    <section id="proceso">
+      <h2>Nuestro proceso en 5 pasos</h2>
+      <div class="timeline">
+        <div class="timeline-step" data-step="1">
+          <h3>Descubrimiento y estrategia</h3>
+          <p>Analizamos tu negocio, clientes ideales y estilo visual para construir una estrategia clara y efectiva.</p>
+        </div>
+        <div class="timeline-step" data-step="2">
+          <h3>Arquitectura y contenidos</h3>
+          <p>Definimos mapa del sitio, copy y llamadas a la acción para guiar al usuario y lograr tus objetivos.</p>
+        </div>
+        <div class="timeline-step" data-step="3">
+          <h3>Diseño visual</h3>
+          <p>Diseñamos vistas modernas y accesibles, adaptables a cualquier dispositivo y alineadas a tu marca.</p>
+        </div>
+        <div class="timeline-step" data-step="4">
+          <h3>Desarrollo y pruebas</h3>
+          <p>Programamos con estándares actuales, optimizando velocidad, SEO y seguridad antes de lanzar.</p>
+        </div>
+        <div class="timeline-step" data-step="5">
+          <h3>Lanzamiento y acompañamiento</h3>
+          <p>Publicamos tu sitio, conectamos analítica, brindamos capacitación y soporte para que escales sin límites.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planes de servicio -->
+    <section id="planes">
+      <h2>Planes flexibles para cada negocio</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Emprendedor</h3>
+          <p>Landing page de alto impacto con 3 secciones, formulario de contacto y botón directo a WhatsApp.</p>
+          <p><strong>Ideal para:</strong> freelancers, consultores, foodtrucks.</p>
+          <p><strong>Desde:</strong> $6,900 MXN</p>
+        </article>
+        <article class="card">
+          <h3>Profesional</h3>
+          <p>Sitio corporativo con hasta 6 secciones, blog y optimización SEO local para atraer clientes constantes.</p>
+          <p><strong>Ideal para:</strong> restaurantes, barberías, gimnasios.</p>
+          <p><strong>Desde:</strong> $12,500 MXN</p>
+        </article>
+        <article class="card">
+          <h3>Premium</h3>
+          <p>E-commerce o portal avanzado con reservas, integraciones a medida y automatizaciones de marketing.</p>
+          <p><strong>Ideal para:</strong> hoteles, clínicas, tiendas online.</p>
+          <p><strong>Desde:</strong> $22,900 MXN</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Testimonios de clientes satisfechos -->
+    <section>
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="grid cols-2 testimonials">
+        <article class="card testimonial">
+          <p>"A la semana de lanzar la web, duplicamos las reservaciones y los clientes llegan sabiendo lo que ofrecemos.
+            Pinonet nos guió en cada paso."</p>
+          <strong>María García · Restaurante Sabor a Casa</strong>
+        </article>
+        <article class="card testimonial">
+          <p>"El nuevo sitio nos ayudó a profesionalizar la marca. Los clientes pueden agendar desde Instagram y
+            recibimos reportes mensuales de resultados."</p>
+          <strong>Jorge Hernández · Barbería Corte Fino</strong>
+        </article>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes para aclarar dudas -->
+    <section id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <div class="grid" style="gap: clamp(16px, 3vw, 24px);">
+        <details>
+          <summary>¿Cuánto tiempo toma desarrollar mi sitio web?</summary>
+          <p>Dependiendo del plan, tardamos entre 2 y 6 semanas. Incluye fases de diseño, desarrollo, pruebas y
+            capacitación.</p>
+        </details>
+        <details>
+          <summary>¿Pueden ayudarme con fotos y textos?</summary>
+          <p>Sí. Contamos con copywriters y fotógrafos aliados para crear contenido atractivo que represente tu negocio.</p>
+        </details>
+        <details>
+          <summary>¿Ofrecen mantenimiento después de lanzar el sitio?</summary>
+          <p>Nuestros planes incluyen soporte básico. También ofrecemos paquetes mensuales para actualizaciones y nuevas
+            funcionalidades.</p>
+        </details>
+        <details>
+          <summary>¿Puedo pagar a meses?</summary>
+          <p>Ofrecemos opciones de pago flexibles con transferencia, tarjeta o plataformas como PayPal y Mercado Pago.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Información de contacto directa -->
+    <section id="contacto">
+      <h2>¿Listo para comenzar?</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Incluye en tu solicitud</h3>
+          <ul>
+            <li>Nombre y giro del negocio.</li>
+            <li>Objetivo principal del sitio (reservas, ventas, captación, etc.).</li>
+            <li>Inspiraciones o páginas de referencia que te gusten.</li>
+            <li>Servicios o productos clave que debes destacar.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Contacto directo</h3>
+          <p>Escríbenos por WhatsApp o correo electrónico para recibir una propuesta personalizada en menos de 24 horas.</p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/521234567890" target="_blank" rel="noopener">+52 123 456 7890</a></p>
+          <p><strong>Correo:</strong> <a href="mailto:hola@pinonet.mx">hola@pinonet.mx</a></p>
+          <a class="button" href="mailto:hola@pinonet.mx">Solicitar propuesta</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con llamada final -->
+  <footer>
+    <h2>Pinonet Studio</h2>
+    <p>Desarrollamos experiencias digitales que generan resultados medibles para tu negocio.</p>
+    <p>&copy; 2024 Pinonet. Todos los derechos reservados. <a href="https://pinonet.mx" target="_blank" rel="noopener">Visita nuestro sitio</a>.</p>
+  </footer>
 </body>
 </html>
-
