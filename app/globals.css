@@ -240,60 +240,58 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
   .input-row{ flex-direction:column; }
 }
 
-/* ====== Ajustes móviles para Contacto y Footer ====== */
+/* ===== Ajuste fino para móviles: Contacto compacto ===== */
 @media (max-width: 600px) {
-  /* Compactar toda la sección de contacto */
-  #contacto { padding-bottom: 96px; } /* deja espacio bajo el WA flotante */
-  #contacto .surface { padding: 16px; }
-  #contacto .card { padding: 14px; border-radius: 14px; }
+  #contacto { padding: 28px 0 84px; } /* menos alto */
+  #contacto .surface { padding: 14px 12px; border-radius: 14px; }
+  #contacto .card { padding: 10px 12px; }
 
-  /* Campos más cómodos en móvil */
-  #form-contacto .input-group { gap: 4px; }
-  #form-contacto label { font-size: 15px; }
+  /* Campos más pequeños y con menos separación */
+  #form-contacto .input-group { gap: 3px; margin-bottom: 6px; }
+  #form-contacto label { font-size: 14px; line-height: 1.2; }
   #form-contacto input,
   #form-contacto select,
   #form-contacto textarea {
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 15px;
+    padding: 8px 10px;
+    font-size: 14.5px;
+    border-radius: 8px;
   }
 
-  /* Fila de dos columnas (correo/whats) pasa a columna con buen espacio */
-  .input-row { flex-direction: column; gap: 10px; }
+  /* Fila de dos columnas a columna con poco espacio */
+  .input-row { flex-direction: column; gap: 6px; margin-bottom: 4px; }
 
-  /* Microcopy y checkbox más compactos */
-  .microcopy { font-size: 12.5px; }
-  .check { font-size: 13.5px; }
+  /* Checkbox y microcopy más ajustados */
+  .check { font-size: 13px; margin-top: 6px; }
+  .microcopy { font-size: 12.5px; line-height: 1.3; margin-top: 2px; }
 
-  /* Tarjetas de “confianza” en 1 columna */
-  .trust { grid-template-columns: 1fr; gap: 8px; }
-  .trust-item { padding: 10px; }
+  /* Espacio del botón */
+  .btn.primary { margin-top: 6px; padding: 10px 14px; font-size: 15px; }
 
-  /* Mapa: menos alto en móvil */
-  .map { aspect-ratio: 16/11; border-radius: 10px; }
+  /* Sección lateral y tarjetas de confianza */
+  .trust { grid-template-columns: 1fr; gap: 6px; }
+  .trust-item { padding: 8px; border-radius: 10px; }
+  .contact-aside h3 { margin-bottom: 4px; font-size: 16px; }
+  .contact-meta { gap: 4px; }
 
-  /* Botón de WhatsApp: que no estorbe el textarea */
+  /* Mapa más corto */
+  .map { aspect-ratio: 16/11; border-radius: 10px; margin-top: 6px; }
+
+  /* Botón de WhatsApp flotante más arriba y chico */
   .whatsapp-float {
-    bottom: 72px;   /* antes 20px */
-    right: 16px;
-    width: 52px; height: 52px; font-size: 24px;
+    bottom: 74px; right: 14px;
+    width: 48px; height: 48px; font-size: 22px;
   }
 
   /* Footer más compacto */
-  .footer-isiama { padding-top: 32px; }
-  .footer-top { gap: 20px; padding-bottom: 20px; }
-  .footer-bottom { padding: 16px 0 12px; }
-  .footer-top h3,
-  .footer-contact h4, .footer-links h4 { margin-bottom: 8px; }
-  .footer-contact li, .footer-links li { margin-bottom: 6px; }
+  .footer-isiama { padding-top: 28px; }
+  .footer-top { gap: 16px; padding-bottom: 18px; }
+  .footer-bottom { padding: 14px 0 10px; }
 }
 
-/* Un poco más apretado en pantallas muy pequeñas */
 @media (max-width: 420px) {
-  #contacto .surface { padding: 14px; }
-  #contacto .card { padding: 12px; }
+  #contacto .surface { padding: 12px 10px; }
   #form-contacto input,
   #form-contacto select,
-  #form-contacto textarea { padding: 9px; font-size: 14.5px; }
-  .whatsapp-float { bottom: 76px; width: 50px; height: 50px; }
+  #form-contacto textarea { padding: 7px 9px; font-size: 14px; }
+  .whatsapp-float { bottom: 78px; width: 46px; height: 46px; }
 }
