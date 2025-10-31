@@ -1,45 +1,36 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Image from "next/image"; // ✅ agregado
+import Image from "next/image";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "600", "800"],
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"], weight: ["400","600","800"], display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alianzama.edu.mx"),
-  title: "ISIAMA • Instituto Superior de Idiomas e Innovación",
+  metadataBase: new URL("https://www.pinonet.me"),
+  title: "PINONET • Diseño y desarrollo de páginas web",
   description:
-    "Aprende Inglés, Francés e Informática en ISIAMA. Asesores certificados, metodología comunicativa, certificación CeNNi y RVOE SEP. Sedes en Tlaxiaco y Pinotepa Nacional.",
+    "Creamos páginas web rápidas y optimizadas para vender: landing pages, sitios corporativos y e-commerce inicial. SEO técnico, analítica y dominio/hosting.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "https://alianzama.edu.mx/",
-    title: "ISIAMA • Instituto Superior de Idiomas e Innovación",
-    description:
-      "Idiomas • Tecnología • Certificación. CeNNi y RVOE SEP. Tlaxiaco y Pinotepa.",
+    url: "https://www.pinonet.me/",
+    title: "PINONET • Sitios web modernos y rápidos",
+    description: "Tu web lista para convertir visitantes en clientes.",
     images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ISIAMA • Instituto Superior de Idiomas e Innovación",
-    description:
-      "Aprende Inglés, Francés e Informática con asesores certificados. CeNNi y RVOE SEP.",
+    title: "PINONET • Diseño web",
+    description: "Landing pages y sitios de negocio con enfoque a conversión.",
     images: ["/og-image.jpg"],
   },
   icons: { icon: "/favicon.ico" },
   manifest: "/site.webmanifest",
 };
 
-export const viewport: Viewport = {
-  themeColor: "#1a120b",
-};
+export const viewport: Viewport = { themeColor: "#0b1220" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -48,8 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
-
-        {/* ===== Botón flotante de WhatsApp ===== */}
         <a
           href="https://wa.me/529532295158"
           className="whatsapp-float"
@@ -57,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="noopener noreferrer"
           aria-label="Chatear por WhatsApp"
         >
-          <Image src="/whatsapp.svg" alt="WhatsApp" width={28} height={28} /> {/* ✅ cambiado */}
+          <Image src="/whatsapp.svg" alt="WhatsApp" width={28} height={28} />
         </a>
       </body>
     </html>

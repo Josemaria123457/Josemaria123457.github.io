@@ -1,184 +1,158 @@
-// app/page.tsx
 export default function Page() {
   return (
     <>
-      {/* ===== Hero ===== */}
-      <section className="hero" id="inscripciones">
+      {/* HERO */}
+      <section className="hero" id="inicio">
         <div className="container wrap">
           <div>
-            <span className="eyebrow">Idiomas • Tecnología • Certificación</span>
-            <h1>Aprende Inglés, Francés e Informática con asesores certificados</h1>
-            <p>
-              Metodología comunicativa, grupos reducidos y rutas de certificación{" "}
-              <strong>CeNNi</strong> respaldadas por <strong>SEP</strong>. Presencial y
-              mixto.
-            </p>
+            <span className="eyebrow">Web performance • SEO • Conversión</span>
+            <h1>Diseñamos páginas web <b>rápidas</b> y enfocadas a <b>ventas</b></h1>
+            <p>Landing pages, sitios corporativos y e-commerce inicial. Dominio, hosting y analítica listos para producción.</p>
 
             <div className="badges">
-              <span className="badge">Enfoque comunicativo</span>
-              <span className="badge">Asesores certificados</span>
-              <span className="badge">RVOE SEP</span>
+              <span className="badge">Core Web Vitals 90+</span>
+              <span className="badge">SEO técnico</span>
+              <span className="badge">WhatsApp & Analytics</span>
             </div>
 
             <div className="cta">
-              <a className="btn primary" href="#programas">Ver programas</a>
-              <a className="btn" href="https://wa.me/529542061910" target="_blank" rel="noopener">
-                WhatsApp
-              </a>
+              <a className="btn primary" href="#planes">Ver planes</a>
+              <a className="btn" href="#contacto">Cotiza</a>
             </div>
 
             <div className="stats" role="list">
-              <div className="stat" role="listitem"><b>10+ años</b><span className="small">de experiencia</span></div>
-              <div className="stat" role="listitem"><b>2 sedes</b><span className="small">Tlaxiaco &amp; Pinotepa</span></div>
-              <div className="stat" role="listitem"><b>CeNNi</b><span className="small">Centro aplicador</span></div>
-              <div className="stat" role="listitem"><b>RVOE</b><span className="small">Programas con validez</span></div>
+              <div className="stat" role="listitem"><b>7 días</b><span className="small">landing lista</span></div>
+              <div className="stat" role="listitem"><b>+95</b><span className="small">performance</span></div>
+              <div className="stat" role="listitem"><b>SSL</b><span className="small">y dominio</span></div>
+              <div className="stat" role="listitem"><b>Soporte</b><span className="small">incluido</span></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Programas ===== */}
-      <section id="programas" className="band-1">
+      {/* SERVICIOS */}
+      <section id="servicios" className="band-1">
         <div className="container">
           <div className="surface">
-            <h2>Programas académicos</h2>
-            <p className="lead">Idiomas y tecnología para todas las etapas y objetivos.</p>
+            <h2>Servicios</h2>
+            <p className="lead">Paquetes pensados para negocio local, emprendimientos y pymes.</p>
             <div className="grid cards">
               <article className="card">
-                <h3>Inglés general</h3>
-                <p>Desde Fundamentals hasta Advanced. Alineado al MCER; preparación para certificaciones.</p>
-                <span className="tag">Niños / Jóvenes / Adultos</span>
+                <h3>Landing de alto impacto</h3>
+                <p>Una página que vende: mensajes claros, CTA, WhatsApp y métricas.</p>
+                <span className="tag">Entrega desde 7 días</span>
               </article>
               <article className="card">
-                <h3>Francés</h3>
-                <p>Desarrolla competencias comunicativas con acompañamiento experto y evaluación continua.</p>
-                <span className="tag">A1–B2</span>
+                <h3>Sitio 3–5 secciones</h3>
+                <p>Inicio, servicios, sobre nosotros, contacto y blog opcional.</p>
+                <span className="tag">SEO + rendimiento</span>
               </article>
               <article className="card">
-                <h3>Informática e Innovación</h3>
-                <p>Computación básica, Office, alfabetización digital y desarrollo web inicial.</p>
-                <span className="tag">Habilidades tecnológicas</span>
+                <h3>E-commerce inicial</h3>
+                <p>Catálogo básico, checkout externo y capacitación corta.</p>
+                <span className="tag">Escalable</span>
               </article>
               <article className="card">
-                <h3>SEPA Inglés</h3>
-                <p>Programa reconocido para formación práctica y flexible.</p>
-                <span className="tag">Sede ISIAMA</span>
+                <h3>Rediseño & migración</h3>
+                <p>Migramos desde Wix/WordPress a un sitio moderno y veloz.</p>
+                <span className="tag">Sin caídas</span>
               </article>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Conócenos ===== */}
-      <section id="conocenos" className="band-2">
+      {/* PROCESO */}
+      <section id="proceso" className="band-2">
         <div className="container">
           <div className="surface">
-            <h2>Conócenos</h2>
-            <p className="lead">
-              Somos el <strong>Instituto Superior de Idiomas México Americana</strong>,
-              con más de una década formando estudiantes en idiomas e innovación.
-            </p>
-            <div className="cols">
-              <div className="card">
-                <h3>Misión</h3>
-                <p>
-                  Brindar enseñanza de idiomas con enfoque comunicativo mediante experiencias
-                  intuitivas y participativas, guiadas por asesores altamente calificados.
-                </p>
-              </div>
-              <div className="card">
-                <h3>Visión</h3>
-                <p>
-                  Ser líderes en enseñanza de idiomas y habilidades tecnológicas para impulsar
-                  el desarrollo personal y profesional de nuestra comunidad.
-                </p>
-              </div>
-              <div className="card">
-                <h3>Valores</h3>
-                <p>Amor • Respeto • Compromiso • Responsabilidad • Trabajo en equipo • Solidaridad • Confianza.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Metodología ===== */}
-      <section id="metodo" className="band-1">
-        <div className="container">
-          <div className="surface">
-            <h2>Metodología y ruta de aprendizaje</h2>
+            <h2>Nuestro proceso</h2>
             <div className="timeline" role="list">
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>Diagnóstico inicial</strong><br /><span className="small">Ubicación por nivel y objetivos.</span></div></div>
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>Clase comunicativa</strong><br /><span className="small">Enfoque práctico: hablar, escuchar, leer y escribir.</span></div></div>
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>Evaluaciones parciales</strong><br /><span className="small">Retroalimentación constante para avanzar con confianza.</span></div></div>
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>Certificación</strong><br /><span className="small">Opcional con <b>CeNNi</b> y validez oficial.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>1. Brief</strong><br /><span className="small">Objetivos, referencias y contenido.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>2. Prototipo</strong><br /><span className="small">Wireframe y propuesta visual.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>3. Desarrollo</strong><br /><span className="small">Responsive, SEO y analítica.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>4. Lanzamiento</strong><br /><span className="small">Dominio, SSL y seguimiento.</span></div></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Certificaciones ===== */}
-      <section id="cert" className="band-2">
+      {/* PORTAFOLIO (placeholders) */}
+      <section id="portafolio" className="band-1">
         <div className="container">
           <div className="surface">
-            <h2>Certificaciones y RVOE</h2>
-            <p className="lead">Programas con validez oficial y centro aplicador de exámenes.</p>
-            <div className="badges">
-              <span className="badge">RVOE SEP 16FT159 — Inglés</span>
-              <span className="badge">RVOE SEP 16FT164 — Francés</span>
-              {/*<span className="badge">RVOE SEP 16FT168 — Informática</span>*/}
-              <span className="badge">Centro aplicador CeNNi</span>
+            <h2>Portafolio</h2>
+            <p className="lead">Algunos diseños que hemos entregado.</p>
+            <div className="grid cards">
+              {[1,2,3,4,5,6].map((n)=>(
+                <article key={n} className="card">
+                  <div style={{aspectRatio:"16/10", background:"#0b1420", borderRadius:"12px", marginBottom:"10px"}} />
+                  <h3>Proyecto #{n}</h3>
+                  <p>Landing orientada a conversión.</p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Testimonios ===== */}
-      <section className="band-1 testi">
-        <div className="container">
-          <div className="surface alt">
-            <h2>Lo que dicen nuestros estudiantes</h2>
-            <div className="testi-track" aria-label="Testimonios" tabIndex={0}>
-              <article className="card"><h3>María G.</h3><p>“La atención es excelente y las clases me ayudaron a hablar con seguridad.”</p><span className="tag">Inglés B1</span></article>
-              <article className="card"><h3>Carlos R.</h3><p>“Certifiqué con CeNNi gracias a la preparación del instituto.”</p><span className="tag">Certificación</span></article>
-              <article className="card"><h3>Itzel P.</h3><p>“El enfoque práctico hizo que avanzara muy rápido.”</p><span className="tag">Francés A2</span></article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Sedes ===== */}
-      <section id="sedes" className="band-2">
+      {/* PLANES */}
+      <section id="planes" className="band-2">
         <div className="container">
           <div className="surface">
-            <h2>Nuestras sedes</h2>
+            <h2>Planes y precios</h2>
+            <p className="lead">Facturación en MXN. Personalizamos cualquier plan.</p>
             <div className="grid cards">
               <article className="card">
-                <h3>Tlaxiaco</h3>
-                <p className="small">
-                  Tel: <a href="tel:+529542061910">(953) 239 7626</a> • WhatsApp:{" "}
-                  <a href="https://wa.me/529542061910" target="_blank" rel="noopener">(953) 229 5158</a>
-                </p>
-                <p>Programas para niños, jóvenes y adultos. Horarios matutinos y vespertinos.</p>
+                <h3>Landing</h3>
+                <p>$4,900 MXN</p>
+                <ul className="small">
+                  <li>1 sección</li><li>WhatsApp/CTA</li><li>SEO base</li><li>1 mes de soporte</li>
+                </ul>
               </article>
               <article className="card">
-                <h3>Pinotepa Nacional</h3>
-                <p className="small">Tel: <a href="tel:+529542061910">(954) 206 1910</a> • Calle Tercera Ote. 105, Centro, 71600</p>
-                <p>programas mixtos y preparación a certificación.</p>
+                <h3>Negocio</h3>
+                <p>$9,900 MXN</p>
+                <ul className="small">
+                  <li>3–5 secciones</li><li>Analítica + eventos</li><li>2 meses soporte</li><li>Dominio + hosting*</li>
+                </ul>
               </article>
+              <article className="card">
+                <h3>E-commerce inicial</h3>
+                <p>$14,900 MXN</p>
+                <ul className="small">
+                  <li>Catálogo básico</li><li>Checkout externo</li><li>Capacitación</li><li>3 meses soporte</li>
+                </ul>
+              </article>
+            </div>
+            <p className="small" style={{marginTop:8}}>*Dominio y hosting incluidos el primer año en planes Negocio/E-commerce.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="band-1">
+        <div className="container">
+          <div className="surface">
+            <h2>Preguntas frecuentes</h2>
+            <div className="grid">
+              <article className="card"><h3>¿Qué necesito para empezar?</h3><p>Logo y contenido básico. Si no lo tienes, te guiamos.</p></article>
+              <article className="card"><h3>¿Incluye SEO?</h3><p>SEO técnico inicial (metadatos, sitemap, OG, rendimiento).</p></article>
+              <article className="card"><h3>¿Tiempo de entrega?</h3><p>Desde 7 días hábiles una landing; 2–3 semanas sitios mayores.</p></article>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== Contacto ===== */}
-      <section id="contacto" className="band-1">
+      {/* CONTACTO */}
+      <section id="contacto" className="band-2">
         <div className="container">
           <div className="surface">
-            <h2>Contacto e inscripciones</h2>
-            <p className="lead">Escríbenos y te ayudamos a elegir tu mejor ruta.</p>
+            <h2>Hablemos de tu proyecto</h2>
+            <p className="lead">Cuéntanos objetivos y tiempos. Te proponemos la mejor ruta.</p>
             <div className="cols">
-              <form className="card" id="form-contacto" action="mailto:isiama.20361ctlaxiaco@gmail.com" method="post">
+              <form className="card" id="form-contacto" action="https://formsubmit.co/hola@pinonet.me" method="POST">
+                <input type="hidden" name="_captcha" value="false" />
                 <label htmlFor="nombre">Nombre</label>
                 <input id="nombre" name="nombre" required autoComplete="name" />
                 <label htmlFor="correo">Correo</label>
@@ -189,21 +163,12 @@ export default function Page() {
               </form>
 
               <div className="card">
-                <h3>Datos de contacto</h3>
+                <h3>Contacto directo</h3>
                 <ul className="small" style={{ marginTop: "6px" }}>
-                  <li>Correo: <a href="mailto:isiama.20361ctlaxiaco@gmail.com">isiama.20361ctlaxiaco@gmail.com</a></li>
-                  <li>Correo: <a href="mailto:isiama.pinotepa.20361@gmail.com">isiama.pinotepa.20361@gmail.com</a></li>
+                  <li>Email: <a href="mailto:hola@pinonet.me">hola@pinonet.me</a></li>
                   <li>WhatsApp: <a href="https://wa.me/529532295158" target="_blank" rel="noopener">(953) 229 5158</a></li>
-                  <li>Tel Tlaxiaco: <a href="tel:+529532397626">(953) 239 7626</a></li>
-                  <li>Tel Pinotepa: <a href="tel:+529542061910">(954) 206 1910</a></li>
                 </ul>
-                <iframe
-                  className="map"
-                  loading="lazy"
-                  allowFullScreen
-                  src="https://www.google.com/maps?q=Calle%20Tercera%20Ote.%20105%2C%20Santiago%20Pinotepa%20Nacional%2C%20Oaxaca%2C%20M%C3%A9xico&output=embed"
-                  title="Mapa de ubicación Pinotepa"
-                />
+                <div className="small" style={{marginTop:12}}>Atendemos en Oaxaca y de forma remota a todo México.</div>
               </div>
             </div>
           </div>
