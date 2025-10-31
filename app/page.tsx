@@ -157,10 +157,10 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
         Cuéntanos objetivos, plazos y referencias. Te proponemos la mejor ruta en menos de 24h.
       </p>
 
-      <div className="cols">
+      <div className="contact-card">
         {/* FORMULARIO */}
         <form
-          id="form-contacto"
+          id="fcontacto"
           className="card contact-card"
           action="https://formsubmit.co/hola@pinonet.me"
           method="POST"
