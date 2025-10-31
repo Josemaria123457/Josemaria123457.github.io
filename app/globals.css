@@ -239,3 +239,61 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
   .trust{ grid-template-columns:1fr; }
   .input-row{ flex-direction:column; }
 }
+
+/* ====== Ajustes móviles para Contacto y Footer ====== */
+@media (max-width: 600px) {
+  /* Compactar toda la sección de contacto */
+  #contacto { padding-bottom: 96px; } /* deja espacio bajo el WA flotante */
+  #contacto .surface { padding: 16px; }
+  #contacto .card { padding: 14px; border-radius: 14px; }
+
+  /* Campos más cómodos en móvil */
+  #form-contacto .input-group { gap: 4px; }
+  #form-contacto label { font-size: 15px; }
+  #form-contacto input,
+  #form-contacto select,
+  #form-contacto textarea {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  /* Fila de dos columnas (correo/whats) pasa a columna con buen espacio */
+  .input-row { flex-direction: column; gap: 10px; }
+
+  /* Microcopy y checkbox más compactos */
+  .microcopy { font-size: 12.5px; }
+  .check { font-size: 13.5px; }
+
+  /* Tarjetas de “confianza” en 1 columna */
+  .trust { grid-template-columns: 1fr; gap: 8px; }
+  .trust-item { padding: 10px; }
+
+  /* Mapa: menos alto en móvil */
+  .map { aspect-ratio: 16/11; border-radius: 10px; }
+
+  /* Botón de WhatsApp: que no estorbe el textarea */
+  .whatsapp-float {
+    bottom: 72px;   /* antes 20px */
+    right: 16px;
+    width: 52px; height: 52px; font-size: 24px;
+  }
+
+  /* Footer más compacto */
+  .footer-isiama { padding-top: 32px; }
+  .footer-top { gap: 20px; padding-bottom: 20px; }
+  .footer-bottom { padding: 16px 0 12px; }
+  .footer-top h3,
+  .footer-contact h4, .footer-links h4 { margin-bottom: 8px; }
+  .footer-contact li, .footer-links li { margin-bottom: 6px; }
+}
+
+/* Un poco más apretado en pantallas muy pequeñas */
+@media (max-width: 420px) {
+  #contacto .surface { padding: 14px; }
+  #contacto .card { padding: 12px; }
+  #form-contacto input,
+  #form-contacto select,
+  #form-contacto textarea { padding: 9px; font-size: 14.5px; }
+  .whatsapp-float { bottom: 76px; width: 50px; height: 50px; }
+}
