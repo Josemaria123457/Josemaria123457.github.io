@@ -201,3 +201,41 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
 }
 .whatsapp-float:hover{ transform:scale(1.1) rotate(5deg); filter:brightness(1.1); }
 [id]{ scroll-margin-top: 80px; }
+
+
+/* ===== Contacto mejorado ===== */
+.contact-card { display:flex; flex-direction:column; gap:12px; }
+.input-group { display:flex; flex-direction:column; gap:6px; }
+.input-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.input-row .input-group { flex:1 1 220px; }
+
+#form-contacto input,
+#form-contacto select,
+#form-contacto textarea{
+  width:100%; padding:12px; border-radius:10px;
+  border:1px solid var(--stroke); background:#0b1420; color:var(--text);
+}
+
+#form-contacto select{ appearance:none; }
+#form-contacto .req{ color:var(--brand-2); }
+.microcopy{ color:var(--muted); font-size:13px; }
+.mt8{ margin-top:8px; }
+.check{ display:flex; align-items:center; gap:8px; color:var(--muted); }
+
+/* Lateral de contacto */
+.contact-aside{ display:flex; flex-direction:column; gap:14px; }
+.contact-meta{ display:grid; gap:6px; }
+.trust{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.trust-item{
+  background:var(--surface-2); border:1px solid var(--stroke);
+  border-radius:12px; padding:12px; text-align:center;
+}
+
+/* Footer pequeños ajustes */
+.footer-bottom .small{ display:block; margin-top:6px; color:var(--muted); }
+
+/* Responsivo */
+@media (max-width:900px){
+  .trust{ grid-template-columns:1fr; }
+  .input-row{ flex-direction:column; }
+}

@@ -6,7 +6,10 @@ export default function Footer() {
           <div className="footer-brand">
             <span className="logo" aria-hidden="true" />
             <h3>PINONET</h3>
-            <p>Diseño y desarrollo de sitios web rápidos, seguros y listos para vender.</p>
+            <p>
+              Diseño y desarrollo de sitios web rápidos, seguros y orientados a conversión.
+              Incluimos SEO técnico, analítica y soporte.
+            </p>
           </div>
 
           <div className="footer-contact">
@@ -23,14 +26,19 @@ export default function Footer() {
             <ul>
               <li><a href="#servicios">Servicios</a></li>
               <li><a href="#proceso">Proceso</a></li>
+              <li><a href="#portafolio">Portafolio</a></li>
               <li><a href="#planes">Planes</a></li>
               <li><a href="#faq">FAQ</a></li>
+              <li><a href="#contacto">Contacto</a></li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} <strong>PINONET</strong> • Hecho con ♥</p>
+          <p className="small">
+            Rendimiento optimizado • SSL • Dominio • Deploy automático con Vercel
+          </p>
         </div>
       </div>
     </footer>

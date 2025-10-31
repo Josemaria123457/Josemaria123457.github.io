@@ -6,22 +6,21 @@ export default function Page() {
         <div className="container wrap">
           <div>
             <span className="eyebrow">Web performance • SEO • Conversión</span>
-            <h1>Diseñamos páginas web <b>rápidas</b> y enfocadas a <b>ventas</b></h1>
-            <p>Landing pages, sitios corporativos y e-commerce inicial. Dominio, hosting y analítica listos para producción.</p>
+            <h1>Diseñamos páginas web <b>profecionales</b>,<b>rapidas</b> y optimizadas para resultados reales</h1>
+            <p>Creamos páginas web, tiendas en línea y plataformas corporativas con un enfoque estratégico en rendimiento, posicionamiento y conversión.</p>
 
             <div className="badges">
-              <span className="badge">Core Web Vitals 90+</span>
               <span className="badge">SEO técnico</span>
-              <span className="badge">WhatsApp & Analytics</span>
+              <span className="badge">WhatsApp & Analisis</span>
             </div>
 
             <div className="cta">
               <a className="btn primary" href="#planes">Ver planes</a>
-              <a className="btn" href="#contacto">Cotiza</a>
+              <a className="btn" href="#contacto">Solicitar cotización</a>
             </div>
 
             <div className="stats" role="list">
-              <div className="stat" role="listitem"><b>7 días</b><span className="small">landing lista</span></div>
+              <div className="stat" role="listitem"><b>7 días</b><span className="small">entrega rapida</span></div>
               <div className="stat" role="listitem"><b>+95</b><span className="small">performance</span></div>
               <div className="stat" role="listitem"><b>SSL</b><span className="small">y dominio</span></div>
               <div className="stat" role="listitem"><b>Soporte</b><span className="small">incluido</span></div>
@@ -35,26 +34,29 @@ export default function Page() {
         <div className="container">
           <div className="surface">
             <h2>Servicios</h2>
-            <p className="lead">Paquetes pensados para negocio local, emprendimientos y pymes.</p>
+            <p className="lead">Paquetes diseñados para negocios locales, emprendedores y pequeñas o medianas empresas.</p>
             <div className="grid cards">
               <article className="card">
                 <h3>Landing de alto impacto</h3>
-                <p>Una página que vende: mensajes claros, CTA, WhatsApp y métricas.</p>
+                <p>Página diseñada para captar clientes: mensajes claros, llamada a la acción, contacto directo por WhatsApp y métricas de conversión.</p>
                 <span className="tag">Entrega desde 7 días</span>
               </article>
               <article className="card">
-                <h3>Sitio 3–5 secciones</h3>
-                <p>Inicio, servicios, sobre nosotros, contacto y blog opcional.</p>
+                <h3>Sitio corporativo 3–5 secciones</h3>
+                <p>Incluye página de inicio, servicios, sobre nosotros, contacto y blog opcional.
+Optimizado para SEO y rendimiento..</p>
                 <span className="tag">SEO + rendimiento</span>
               </article>
               <article className="card">
-                <h3>E-commerce inicial</h3>
-                <p>Catálogo básico, checkout externo y capacitación corta.</p>
+                <h3>Tienda en línea básica</h3>
+                <p>Catálogo inicial, integración de pagos y capacitación para administrar productos.
+Ideal para comenzar a vender en línea.</p>
                 <span className="tag">Escalable</span>
               </article>
               <article className="card">
                 <h3>Rediseño & migración</h3>
-                <p>Migramos desde Wix/WordPress a un sitio moderno y veloz.</p>
+                <p>Actualizamos o migramos su sitio desde Wix o WordPress a una versión moderna, veloz y segura.
+Sin interrupciones de servicio.</p>
                 <span className="tag">Sin caídas</span>
               </article>
             </div>
@@ -68,10 +70,10 @@ export default function Page() {
           <div className="surface">
             <h2>Nuestro proceso</h2>
             <div className="timeline" role="list">
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>1. Brief</strong><br /><span className="small">Objetivos, referencias y contenido.</span></div></div>
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>2. Prototipo</strong><br /><span className="small">Wireframe y propuesta visual.</span></div></div>
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>3. Desarrollo</strong><br /><span className="small">Responsive, SEO y analítica.</span></div></div>
-              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>4. Lanzamiento</strong><br /><span className="small">Dominio, SSL y seguimiento.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>1. Análisis (Brief)</strong><br /><span className="small">Definimos objetivos, referencias visuales y contenido principal.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>2. Prototipo</strong><br /><span className="small">WElaboramos el diseño inicial (wireframe) y la propuesta visual.</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>3. Desarrollo</strong><br /><span className="small">Construcción del sitio web con diseño adaptable, SEO técnico y analítica integrada..</span></div></div>
+              <div className="step" role="listitem"><span className="dot" aria-hidden="true"></span><div><strong>4. Lanzamiento</strong><br /><span className="small">Entrega final con dominio, certificado SSL y seguimiento posterior.</span></div></div>
             </div>
           </div>
         </div>
@@ -84,7 +86,7 @@ export default function Page() {
             <h2>Portafolio</h2>
             <p className="lead">Algunos diseños que hemos entregado.</p>
             <div className="grid cards">
-              {[1,2,3,4,5,6].map((n)=>(
+              {[1,2,3,4].map((n)=>(
                 <article key={n} className="card">
                   <div style={{aspectRatio:"16/10", background:"#0b1420", borderRadius:"12px", marginBottom:"10px"}} />
                   <h3>Proyecto #{n}</h3>
@@ -105,21 +107,21 @@ export default function Page() {
             <div className="grid cards">
               <article className="card">
                 <h3>Landing</h3>
-                <p>$4,900 MXN</p>
+                <p>$2,900 MXN</p>
                 <ul className="small">
                   <li>1 sección</li><li>WhatsApp/CTA</li><li>SEO base</li><li>1 mes de soporte</li>
                 </ul>
               </article>
               <article className="card">
                 <h3>Negocio</h3>
-                <p>$9,900 MXN</p>
+                <p>$7,900 MXN</p>
                 <ul className="small">
                   <li>3–5 secciones</li><li>Analítica + eventos</li><li>2 meses soporte</li><li>Dominio + hosting*</li>
                 </ul>
               </article>
               <article className="card">
                 <h3>E-commerce inicial</h3>
-                <p>$14,900 MXN</p>
+                <p>$10,900 MXN</p>
                 <ul className="small">
                   <li>Catálogo básico</li><li>Checkout externo</li><li>Capacitación</li><li>3 meses soporte</li>
                 </ul>
@@ -136,44 +138,124 @@ export default function Page() {
           <div className="surface">
             <h2>Preguntas frecuentes</h2>
             <div className="grid">
-              <article className="card"><h3>¿Qué necesito para empezar?</h3><p>Logo y contenido básico. Si no lo tienes, te guiamos.</p></article>
-              <article className="card"><h3>¿Incluye SEO?</h3><p>SEO técnico inicial (metadatos, sitemap, OG, rendimiento).</p></article>
-              <article className="card"><h3>¿Tiempo de entrega?</h3><p>Desde 7 días hábiles una landing; 2–3 semanas sitios mayores.</p></article>
+              <article className="card"><h3>¿Qué necesito para empezar?</h3><p>Únicamente requerimos su logotipo y contenido básico.<br></br>
+Si aún no los tiene, lo asesoramos paso a paso para elaborarlos.</p></article>
+              <article className="card"><h3>¿Incluye SEO?</h3><p>SSí. Todos los planes incluyen optimización técnica inicial, que abarca metadatos,<br /> mapa del sitio (sitemap), etiquetas OG y configuraciones básicas de rendimiento.</p></article>
+              <article className="card"><h3>¿Cuál es el tiempo de entrega?</h3><p>Las páginas de aterrizaje (landing) se entregan en un promedio de 7 días hábiles. <br />
+Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas.</p></article>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONTACTO */}
-      <section id="contacto" className="band-2">
-        <div className="container">
-          <div className="surface">
-            <h2>Hablemos de tu proyecto</h2>
-            <p className="lead">Cuéntanos objetivos y tiempos. Te proponemos la mejor ruta.</p>
-            <div className="cols">
-              <form className="card" id="form-contacto" action="https://formsubmit.co/hola@pinonet.me" method="POST">
-                <input type="hidden" name="_captcha" value="false" />
-                <label htmlFor="nombre">Nombre</label>
-                <input id="nombre" name="nombre" required autoComplete="name" />
-                <label htmlFor="correo">Correo</label>
-                <input id="correo" name="correo" type="email" required autoComplete="email" />
-                <label htmlFor="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows={4} required />
-                <button className="btn primary" type="submit">Enviar</button>
-              </form>
+      {/* ===== CONTACTO (mejorado) ===== */}
+<section id="contacto" className="band-2">
+  <div className="container">
+    <div className="surface">
+      <h2>Hablemos de tu proyecto</h2>
+      <p className="lead">
+        Cuéntanos objetivos, plazos y referencias. Te proponemos la mejor ruta en menos de 24h.
+      </p>
 
-              <div className="card">
-                <h3>Contacto directo</h3>
-                <ul className="small" style={{ marginTop: "6px" }}>
-                  <li>Email: <a href="mailto:hola@pinonet.me">hola@pinonet.me</a></li>
-                  <li>WhatsApp: <a href="https://wa.me/529532295158" target="_blank" rel="noopener">(953) 229 5158</a></li>
-                </ul>
-                <div className="small" style={{marginTop:12}}>Atendemos en Oaxaca y de forma remota a todo México.</div>
-              </div>
+      <div className="cols">
+        {/* FORMULARIO */}
+        <form
+          id="form-contacto"
+          className="card contact-card"
+          action="https://formsubmit.co/hola@pinonet.me"
+          method="POST"
+        >
+          {/* ajustes formsubmit */}
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_subject" value="Nueva solicitud PINONET" />
+          <input type="text" name="_honey" style={{ display: "none" }} />
+          <input type="hidden" name="_template" value="table" />
+
+          <div className="input-group">
+            <label htmlFor="nombre">Nombre <span className="req">*</span></label>
+            <input id="nombre" name="nombre" required autoComplete="name" placeholder="Tu nombre" />
+          </div>
+
+          <div className="input-row">
+            <div className="input-group">
+              <label htmlFor="correo">Correo <span className="req">*</span></label>
+              <input id="correo" name="correo" type="email" required autoComplete="email" placeholder="tu@correo.com" />
+            </div>
+            <div className="input-group">
+              <label htmlFor="whats">WhatsApp</label>
+              <input id="whats" name="whatsapp" inputMode="tel" placeholder="+52 9xx xxx xxxx" />
             </div>
           </div>
-        </div>
-      </section>
+
+          <div className="input-group">
+            <label htmlFor="tipo">Tipo de sitio</label>
+            <select id="tipo" name="tipo" defaultValue="">
+              <option value="" disabled>Elige una opción</option>
+              <option>Landing</option>
+              <option>Sitio 3–5 secciones</option>
+              <option>E-commerce inicial</option>
+              <option>Rediseño / Migración</option>
+            </select>
+          </div>
+
+          <div className="input-group">
+            <label htmlFor="mensaje">Mensaje <span className="req">*</span></label>
+            <textarea id="mensaje" name="mensaje" rows={5} required
+              placeholder="Objetivos, referencias y plazos (ej. 2 semanas)…" />
+          </div>
+
+          <div className="input-row">
+            <label className="check">
+              <input type="checkbox" name="acepta" required /> Acepto el tratamiento de mis datos para contactar.
+            </label>
+            <span className="microcopy">Respuesta promedio: <b>menos de 24h</b>.</span>
+          </div>
+
+          <button className="btn primary" type="submit">Solicitar propuesta</button>
+          <p className="microcopy mt8">También puedes escribirnos directo a
+            {" "}<a href="mailto:hola@pinonet.me">hola@pinonet.me</a> o al
+            {" "}<a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp</a>.
+          </p>
+        </form>
+
+        {/* INFO / CONFIANZA */}
+        <aside className="card contact-aside">
+          <h3>Contacto directo</h3>
+          <ul className="small contact-meta">
+            <li>Email: <a href="mailto:hola@pinonet.me">hola@pinonet.me</a></li>
+            <li>WhatsApp: <a href="https://wa.me/529532295158" target="_blank" rel="noopener">(953) 229 5158</a></li>
+            <li>Horario: Lun–Vie 10:00–18:00</li>
+            <li>Ubicación: Oaxaca, México (remoto a todo MX)</li>
+          </ul>
+
+          <div className="trust">
+            <div className="trust-item">
+              <b>Core Web Vitals 90+</b>
+              <span className="small">rendimiento medido</span>
+            </div>
+            <div className="trust-item">
+              <b>SEO técnico</b>
+              <span className="small">metadatos, OG, sitemap</span>
+            </div>
+            <div className="trust-item">
+              <b>Soporte incluido</b>
+              <span className="small">primer mes</span>
+            </div>
+          </div>
+
+          <iframe
+            className="map"
+            loading="lazy"
+            allowFullScreen
+            src="https://www.google.com/maps?q=Oaxaca%20de%20Ju%C3%A1rez%2C%20M%C3%A9xico&output=embed"
+            title="Zona de atención"
+          />
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
     </>
   );
 }
+
