@@ -1,26 +1,23 @@
 :root{
   /* ===== Paleta Tech (negro/azul) ===== */
-  --bg:#070b10;            /* fondo base */
-  --band-1:#0a1118;        /* bandas alternas */
+  --bg:#070b10;
+  --band-1:#0a1118;
   --band-2:#0d1420;
-  --surface:#0f1724;       /* tarjetas */
+  --surface:#0f1724;
   --surface-2:#111a2a;
   --card:#121d30;
   --stroke:#1f2a3a;
   --text:#e8f0ff;
   --muted:#b8c4da;
-  --brand:#3b82f6;         /* azul primario */
-  --brand-2:#06b6d4;       /* cian de acento */
+  --brand:#3b82f6;
+  --brand-2:#06b6d4;
   --ok:#22c55e;
   --ring:0 0 0 6px #3b82f644;
   --radius:18px;
   --gap:18px;
   --shadow:0 20px 60px rgba(0,0,0,.35);
 }
-
-@media (prefers-color-scheme: dark){
-  :root{ --bg:#06090f; --text:#f5f9ff; }
-}
+@media (prefers-color-scheme: dark){ :root{ --bg:#06090f; --text:#f5f9ff; } }
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -40,7 +37,7 @@ body{
 img{max-width:100%; height:auto; display:block; border-radius:14px}
 a{color:var(--brand); text-decoration:none; transition:.2s}
 a:hover{color:var(--brand-2)}
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{outline:none; box-shadow:var(--ring)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:none; box-shadow:var(--ring)}
 .container{max-width:1200px; margin:0 auto; padding:0 16px}
 
 /* ===== Header ===== */
@@ -66,8 +63,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .btn.primary{
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
-  color:#06111c; border:none;
-  margin-right:10px;
+  color:#06111c; border:none; margin-right:10px;
 }
 .btn:hover{filter:brightness(1.08); transform:translateY(-1px)}
 .menu-toggle{display:none; cursor:pointer}
@@ -112,7 +108,9 @@ h2{font-size:clamp(24px,4.5vw,36px); margin:0 0 8px; color:var(--brand)}
 .grid.cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .cols{display:grid; gap:24px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{
-  background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius);
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
   padding:18px; height:100%; transition:.25s;
 }
 .card h3{margin:0 0 6px; color:var(--brand-2)}
@@ -128,10 +126,9 @@ h2{font-size:clamp(24px,4.5vw,36px); margin:0 0 8px; color:var(--brand)}
 .testi-track{display:flex; gap:16px; overflow:auto; scroll-snap-type:x mandatory; padding-bottom:10px}
 .testi .card{scroll-snap-align:start; min-width:280px}
 
-/* ===== Contacto ===== */
+/* ===== Contacto (legado mínimo visible) ===== */
 #contacto .surface{padding:28px}
-#contacto .cols{grid-template-columns:1.2fr 1fr}
-#form-contacto input, #form-contacto textarea{
+#form-contacto input,#form-contacto textarea{
   width:100%; padding:10px; border-radius:10px;
   border:1px solid var(--stroke); background:#0b1420; color:var(--text);
   transition:.25s;
@@ -147,14 +144,13 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
 
 /* ===== Responsive ===== */
 @media (max-width:1000px){ .hero .wrap{grid-template-columns:1fr; gap:24px; text-align:center;} }
-@media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} #contacto .cols{grid-template-columns:1fr} }
+@media (max-width:900px){ .footer-grid{grid-template-columns:1fr 1fr} }
 @media (max-width:680px){
   .menu-toggle{display:inline-flex; align-items:center; gap:8px}
   .menu{
     display:none; position:absolute; left:16px; right:16px; top:58px;
     flex-direction:column; background:#0f172a;
-    border:1px solid var(--stroke); border-radius:14px;
-    padding:10px;
+    border:1px solid var(--stroke); border-radius:14px; padding:10px;
   }
   .menu.is-open{display:flex; animation:fadeIn .25s ease;}
   .hero h1{font-size:clamp(26px,7vw,42px);}
@@ -170,7 +166,7 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
 }
 @keyframes fadeIn{ from{opacity:0; transform:translateY(-10px);} to{opacity:1; transform:none;} }
 
-/* Footer moderno (tu bloque adaptado a la nueva paleta) */
+/* Footer moderno */
 .footer-isiama{
   background:linear-gradient(180deg,#0b111a 0%,#070b10 100%);
   border-top:1px solid var(--stroke);
@@ -183,14 +179,14 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
 .footer-top{display:grid; grid-template-columns:2fr 1.2fr 1.2fr; gap:32px; padding-bottom:36px; border-bottom:1px solid var(--stroke);}
 .footer-brand .logo{width:52px; height:52px; display:inline-block; border-radius:14px; background:conic-gradient(from 20deg,var(--brand),var(--brand-2)); box-shadow:0 8px 26px #3b82f633; margin-bottom:10px;}
 .footer-brand h3{color:var(--brand); margin:6px 0;}
-.footer-contact h4, .footer-links h4{color:var(--brand-2); margin-bottom:10px; font-weight:700;}
-.footer-contact ul, .footer-links ul{list-style:none; padding:0; margin:0;}
+.footer-contact h4,.footer-links h4{color:var(--brand-2); margin-bottom:10px; font-weight:700;}
+.footer-contact ul,.footer-links ul{list-style:none; padding:0; margin:0;}
 .footer-bottom{text-align:center; padding:22px 0 16px; font-size:14px; color:var(--muted);}
 .footer-bottom a{color:var(--brand-2);}
 @media(max-width:900px){ .footer-top{grid-template-columns:1fr 1fr} }
 @media(max-width:600px){ .footer-top{grid-template-columns:1fr; text-align:center;} .footer-brand .logo{margin:0 auto 8px;} }
 
-/* WhatsApp flotante igual que antes */
+/* WhatsApp flotante */
 .whatsapp-float{
   position:fixed; bottom:20px; right:20px;
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
@@ -202,132 +198,59 @@ footer{background:#0b111a; border-top:1px solid var(--stroke)}
 .whatsapp-float:hover{ transform:scale(1.1) rotate(5deg); filter:brightness(1.1); }
 [id]{ scroll-margin-top: 80px; }
 
-
-/* ===== Contacto mejorado ===== */
-.contact-card { display:flex; flex-direction:column; gap:12px; }
-.input-group { display:flex; flex-direction:column; gap:6px; }
-.input-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-.input-row .input-group { flex:1 1 220px; }
-
-#form-contacto input,
-#form-contacto select,
-#form-contacto textarea{
-  width:100%; padding:12px; border-radius:10px;
-  border:1px solid var(--stroke); background:#0b1420; color:var(--text);
+/* ================= CONTACTO – NUEVO (sin flex en móvil) ================= */
+#contacto .contact-wrap{ display:grid; grid-template-columns:1.15fr 1fr; gap:24px; }
+#contacto .contact-form{ display:flex; flex-direction:column; gap:10px; padding:18px; }
+#contacto .contact-form .row.two{ display:flex; gap:12px; }
+#contacto .contact-form .row.two .field{ flex:1 1 220px; }
+#contacto .contact-form .field{ display:flex; flex-direction:column; gap:5px; }
+#contacto .contact-form label{ font-weight:600; }
+#contacto .contact-form .req{ color:var(--brand-2); }
+#contacto .contact-form input,#contacto .contact-form select,#contacto .contact-form textarea{
+  width:100%; padding:12px; border-radius:10px; border:1px solid var(--stroke); background:#0b1420; color:var(--text);
 }
-
-#form-contacto select{ appearance:none; }
-#form-contacto .req{ color:var(--brand-2); }
-.microcopy{ color:var(--muted); font-size:13px; }
-.mt8{ margin-top:8px; }
-.check{ display:flex; align-items:center; gap:8px; color:var(--muted); }
-
-/* Lateral de contacto */
-.contact-aside{ display:flex; flex-direction:column; gap:14px; }
-.contact-meta{ display:grid; gap:6px; }
-.trust{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-.trust-item{
-  background:var(--surface-2); border:1px solid var(--stroke);
-  border-radius:12px; padding:12px; text-align:center;
+#contacto .contact-form textarea{ min-height:120px; resize:vertical; }
+/* checkbox y microcopy compactos */
+#contacto .contact-form .check{
+  display:grid !important; grid-template-columns:18px minmax(0,70%); align-items:start;
+  column-gap:8px; color:var(--muted); line-height:1.35; margin-top:8px;
 }
-
-/* Footer pequeños ajustes */
-.footer-bottom .small{ display:block; margin-top:6px; color:var(--muted); }
-
-/* Responsivo */
-@media (max-width:900px){
-  .trust{ grid-template-columns:1fr; }
-  .input-row{ flex-direction:column; }
-}
-
-/* ====== CONTACTO: layout y compactación correctos para tu HTML ====== */
-
-/* 1) Layout del wrapper (tu <div class="contact-card"> que envuelve form y aside) */
-section#contacto > .container > .surface > .contact-card {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 24px;
-}
-
-/* 2) Estilo del FORM (tu <form id="fcontacto" class="card contact-card">) */
-section#contacto form.contact-card.card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 18px;
-}
-
-/* Grupos de campos y fila 2-col (correo/whats) */
-section#contacto form.contact-card.card .input-group { display:flex; flex-direction:column; gap:6px; }
-section#contacto form.contact-card.card .input-row { display:flex; gap:12px; }
-section#contacto form.contact-card.card .input-row .input-group { flex:1 1 220px; }
-
-/* Campos base */
-section#contacto form.contact-card.card input,
-section#contacto form.contact-card.card select,
-section#contacto form.contact-card.card textarea{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--stroke);
-  background:#0b1420;
-  color:var(--text);
-}
-
-/* Aside (derecha) */
-section#contacto .contact-aside.card { padding:18px; display:flex; flex-direction:column; gap:14px; }
-section#contacto .contact-aside .trust { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
-section#contacto .contact-aside .trust-item { background:var(--surface-2); border:1px solid var(--stroke); border-radius:12px; padding:12px; text-align:center; }
-
-/* ===== Versión móvil súper compacta (forzada) ===== */
-@media (max-width: 600px) {
-  section#contacto { padding: 24px 0 88px !important; }
-  section#contacto .surface { padding: 12px 10px !important; border-radius: 14px !important; }
-
-  /* Wrapper pasa a 1 columna */
-  section#contacto > .container > .surface > .contact-card {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
+#contacto .contact-form .check input{ grid-column:1; margin-top:2px; }
+#contacto .contact-form .check + .btn{ margin-top:10px; }
+#contacto .contact-form .microcopy{ color:var(--muted); font-size:13px; margin-top:6px; }
+#contacto .contact-info{ padding:18px; display:flex; flex-direction:column; gap:14px; }
+#contacto .contact-info .info-list{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+@media (max-width:600px){
+  #contacto{ padding:26px 0 92px; }
+  #contacto .surface{ padding:14px; border-radius:14px; }
+  #contacto .contact-wrap{ grid-template-columns:1fr; gap:12px; }
+  #contacto .contact-form{ display:block; padding:10px 12px; }
+  #contacto .contact-form .row.two{ display:block; margin-bottom:8px; }
+  #contacto .contact-form .field{ margin-bottom:8px; }
+  #contacto .contact-form label{ font-size:14px; line-height:1.3; }
+  #contacto .contact-form input,#contacto .contact-form select,#contacto .contact-form textarea{
+    padding:9px 10px; font-size:14.5px; border-radius:8px;
   }
-
-  /* Form compacto */
-  section#contacto form.contact-card.card { padding: 10px 10px !important; gap: 8px !important; }
-  section#contacto form.contact-card.card .input-group { gap: 3px !important; margin-bottom: 6px !important; }
-  section#contacto form.contact-card.card .input-row { flex-direction: column !important; gap: 6px !important; }
-
-  section#contacto form.contact-card.card label { font-size: 14px !important; line-height: 1.2 !important; margin:0 !important; }
-  section#contacto form.contact-card.card input,
-  section#contacto form.contact-card.card select,
-  section#contacto form.contact-card.card textarea {
-    padding: 8px 10px !important;
-    font-size: 14.5px !important;
-    border-radius: 8px !important;
-    margin: 0 !important;
+  #contacto .contact-form textarea{ min-height:105px; }
+  #contacto .contact-info{ padding:12px; gap:10px; }
+  #contacto .map{ aspect-ratio:16/11; border-radius:10px; }
+  #contacto .contact-form .check{ grid-template-columns:18px 1fr; }
+  .whatsapp-float{ bottom:78px; right:14px; width:48px; height:48px; }
+}
+@media (max-width:420px){
+  #contacto .surface{ padding:12px; }
+  #contacto .contact-form{ padding:8px 10px; }
+  #contacto .contact-form input,#contacto .contact-form select,#contacto .contact-form textarea{
+    padding:8px 9px; font-size:14px;
   }
-  section#contacto form.contact-card.card textarea { min-height: 110px !important; }
-
-  section#contacto .check { font-size: 13px !important; margin-top: 6px !important; }
-  section#contacto .microcopy { font-size: 12.5px !important; margin-top: 2px !important; }
-  section#contacto .btn.primary { margin-top: 6px !important; padding: 10px 14px !important; font-size: 15px !important; }
-
-  /* Aside compacto */
-  section#contacto .contact-aside.card { padding: 10px 10px !important; }
-  section#contacto .contact-aside .trust { grid-template-columns: 1fr !important; gap: 6px !important; }
-  section#contacto .contact-aside .trust-item { padding: 8px !important; border-radius: 10px !important; }
-  section#contacto .contact-meta { gap: 4px !important; }
-
-  /* Mapa corto */
-  section#contacto .map { aspect-ratio: 16/11 !important; border-radius: 10px !important; margin-top: 6px !important; }
-
-  /* Botón de WhatsApp: arriba para no tapar */
-  .whatsapp-float { bottom: 78px !important; right: 14px !important; width: 46px !important; height: 46px !important; }
+  .whatsapp-float{ bottom:82px; width:46px; height:46px; }
 }
 
-@media (max-width: 420px) {
-  section#contacto .surface { padding: 10px 8px !important; }
-  section#contacto form.contact-card.card { padding: 8px 8px !important; }
-  section#contacto form.contact-card.card input,
-  section#contacto form.contact-card.card select,
-  section#contacto form.contact-card.card textarea { padding: 7px 9px !important; font-size: 14px !important; }
-  .whatsapp-float { bottom: 82px !important; width: 44px !important; height: 44px !important; }
+/* ===== Portafolio (imágenes clicables) ===== */
+.portfolio-card{ padding:16px; }
+.portfolio-card .card-link{ display:block; color:inherit; text-decoration:none; }
+.portfolio-card .thumb{
+  width:100%; aspect-ratio:16/10; object-fit:cover;
+  border-radius:12px; background:#0b1420; margin-bottom:10px;
 }
+.portfolio-card .card-link:hover h3{ color:var(--brand); transition:.2s; }

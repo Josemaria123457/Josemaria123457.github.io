@@ -1,3 +1,4 @@
+import Link from "next/link"
 export default function Page() {
   return (
     <>
@@ -79,24 +80,47 @@ Sin interrupciones de servicio.</p>
         </div>
       </section>
 
-      {/* PORTAFOLIO (placeholders) */}
-      <section id="portafolio" className="band-1">
-        <div className="container">
-          <div className="surface">
-            <h2>Portafolio</h2>
-            <p className="lead">Algunos diseños que hemos entregado.</p>
-            <div className="grid cards">
-              {[1,2,3,4].map((n)=>(
-                <article key={n} className="card">
-                  <div style={{aspectRatio:"16/10", background:"#0b1420", borderRadius:"12px", marginBottom:"10px"}} />
-                  <h3>Proyecto #{n}</h3>
-                  <p>Landing orientada a conversión.</p>
-                </article>
-              ))}
-            </div>
+{/* PORTAFOLIO */}
+<section id="portafolio" className="band-1">
+  <div className="container">
+    <div className="surface">
+      <h2>Portafolio</h2>
+      <p className="lead">Algunos diseños que hemos entregado.</p>
+
+      {/*
+        Edita este array: titulo, slug (ruta destino) e imagen (colócala en /public/portafolio/…)
+      */}
+      {(() => {
+        const proyectos = [
+          { titulo: "Proyecto #1", slug: "proyecto-1", img: "/portafolio/proyecto-1.jpg", excerpt:"Landing orientada a conversión." },
+          { titulo: "Proyecto #2", slug: "proyecto-2", img: "/portafolio/proyecto-2.jpg", excerpt:"Landing orientada a conversión." },
+          { titulo: "Proyecto #3", slug: "proyecto-3", img: "/portafolio/proyecto-3.jpg", excerpt:"Landing orientada a conversión." },
+          { titulo: "Proyecto #4", slug: "proyecto-4", img: "/portafolio/proyecto-4.jpg", excerpt:"Landing orientada a conversión." },
+        ];
+
+        return (
+          <div className="grid cards">
+            {proyectos.map((p) => (
+              <article key={p.slug} className="card portfolio-card">
+                <Link className="card-link" href={`/proyectos/${p.slug}`} aria-label={`Abrir ${p.titulo}`}>
+                  <img
+                    className="thumb"
+                    src={p.img}
+                    alt={p.titulo}
+                    loading="lazy"
+                  />
+                  <h3>{p.titulo}</h3>
+                  <p>{p.excerpt}</p>
+                </Link>
+              </article>
+            ))}
           </div>
-        </div>
-      </section>
+        );
+      })()}
+    </div>
+  </div>
+</section>
+
 
       {/* PLANES */}
       <section id="planes" className="band-2">
@@ -147,109 +171,97 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
           </div>
         </div>
       </section>
-
-      {/* ===== CONTACTO (mejorado) ===== */}
+{/* ===== CONTACTO (rediseño móvil-first, aislado) ===== */}
 <section id="contacto" className="band-2">
   <div className="container">
     <div className="surface">
       <h2>Hablemos de tu proyecto</h2>
-      <p className="lead">
-        Cuéntanos objetivos, plazos y referencias. Te proponemos la mejor ruta en menos de 24h.
-      </p>
+      <p className="lead">Cuéntanos objetivos, plazos y referencias. Respondemos en &lt; 24 h.</p>
 
-      <div className="contact-card">
+      <div className="contact-wrap">
         {/* FORMULARIO */}
         <form
-          id="fcontacto"
-          className="card contact-card"
+          id="contacto-form"
+          className="card contact-form"
           action="https://formsubmit.co/hola@pinonet.me"
           method="POST"
         >
-          {/* ajustes formsubmit */}
+          {/* formsubmit */}
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_subject" value="Nueva solicitud PINONET" />
-          <input type="text" name="_honey" style={{ display: "none" }} />
           <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style={{ display: "none" }} />
 
-          <div className="input-group">
-            <label htmlFor="nombre">Nombre <span className="req">*</span></label>
-            <input id="nombre" name="nombre" required autoComplete="name" placeholder="Tu nombre" />
+          <div className="field">
+            <label htmlFor="c-nombre">Nombre <span className="req">*</span></label>
+            <input id="c-nombre" name="nombre" required autoComplete="name" placeholder="Tu nombre" />
           </div>
 
-          <div className="input-row">
-            <div className="input-group">
-              <label htmlFor="correo">Correo <span className="req">*</span></label>
-              <input id="correo" name="correo" type="email" required autoComplete="email" placeholder="tu@correo.com" />
+          <div className="row two">
+            <div className="field">
+              <label htmlFor="c-correo">Correo <span className="req">*</span></label>
+              <input id="c-correo" name="correo" type="email" required autoComplete="email" placeholder="tu@correo.com" />
             </div>
-            <div className="input-group">
-              <label htmlFor="whats">WhatsApp</label>
-              <input id="whats" name="whatsapp" inputMode="tel" placeholder="+52 9xx xxx xxxx" />
+            <div className="field">
+              <label htmlFor="c-whats">WhatsApp</label>
+              <input id="c-whats" name="whatsapp" inputMode="tel" placeholder="+52 9xx xxx xxxx" />
             </div>
           </div>
 
-          <div className="input-group">
-            <label htmlFor="tipo">Tipo de sitio</label>
-            <select id="tipo" name="tipo" defaultValue="">
-              <option value="" disabled>Elige una opción</option>
-              <option>Landing</option>
-              <option>Sitio 3–5 secciones</option>
-              <option>E-commerce inicial</option>
-              <option>Rediseño / Migración</option>
-            </select>
+          <div className="row two">
+            <div className="field">
+              <label htmlFor="c-tipo">Tipo de sitio</label>
+              <select id="c-tipo" name="tipo" defaultValue="">
+                <option value="" disabled>Elige una opción</option>
+                <option>Landing</option>
+                <option>Sitio 3–5 secciones</option>
+                <option>E-commerce inicial</option>
+                <option>Rediseño / Migración</option>
+              </select>
+            </div>
+            <div className="field">
+              <label htmlFor="c-plazo">Plazo objetivo</label>
+              <select id="c-plazo" name="plazo" defaultValue="">
+                <option value="" disabled>Selecciona</option>
+                <option>1 semana</option>
+                <option>2–3 semanas</option>
+                <option>1 mes</option>
+              </select>
+            </div>
           </div>
 
-          <div className="input-group">
-            <label htmlFor="mensaje">Mensaje <span className="req">*</span></label>
-            <textarea id="mensaje" name="mensaje" rows={5} required
-              placeholder="Objetivos, referencias y plazos (ej. 2 semanas)…" />
+          <div className="field">
+            <label htmlFor="c-mensaje">Mensaje <span className="req">*</span></label>
+            <textarea id="c-mensaje" name="mensaje" rows={4} required
+              placeholder="Objetivos, referencias y plazos" />
           </div>
 
-          <div className="input-row">
-            <label className="check">
-              <input type="checkbox" name="acepta" required /> Acepto el tratamiento de mis datos para contactar.
-            </label>
-            <span className="microcopy">Respuesta promedio: <b>menos de 24h</b>.</span>
-          </div>
+          <label className="check">
+            <input type="checkbox" name="acepta" required />
+            <span className="check-text">Acepto el tratamiento de mis datos.</span>
+          </label>
 
           <button className="btn primary" type="submit">Solicitar propuesta</button>
-          <p className="microcopy mt8">También puedes escribirnos directo a
-            {" "}<a href="mailto:hola@pinonet.me">hola@pinonet.me</a> o al
-            {" "}<a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp</a>.
+          <p className="microcopy">
+            También puedes escribir a <a href="mailto:hola@pinonet.me">hola@pinonet.me</a> o por{" "}
+            <a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp</a>.
           </p>
         </form>
 
-        {/* INFO / CONFIANZA */}
-        <aside className="card contact-aside">
+        {/* INFO */}
+        <aside className="card contact-info">
           <h3>Contacto directo</h3>
-          <ul className="small contact-meta">
+          <ul className="small info-list">
             <li>Email: <a href="mailto:hola@pinonet.me">hola@pinonet.me</a></li>
-            <li>WhatsApp: <a href="https://wa.me/529532295158" target="_blank" rel="noopener">(953) 229 5158</a></li>
-            <li>Horario: Lun–Vie 10:00–18:00</li>
+            <li>WhatsApp: <a href="https://wa.me/529542724987" target="_blank" rel="noopener">(954) 272 4987</a></li>
+            <li>Horario: Lun–Sab 10:00–18:00</li>
             <li>Ubicación: Oaxaca, México (remoto a todo MX)</li>
           </ul>
 
           <div className="trust">
-            <div className="trust-item">
-              <b>Core Web Vitals 90+</b>
-              <span className="small">rendimiento medido</span>
-            </div>
-            <div className="trust-item">
-              <b>SEO técnico</b>
-              <span className="small">metadatos, OG, sitemap</span>
-            </div>
-            <div className="trust-item">
-              <b>Soporte incluido</b>
-              <span className="small">primer mes</span>
-            </div>
+            <h4>Confianza</h4>
+            <p>Más de 100 proyectos entregados con éxito.</p>
           </div>
-
-          <iframe
-            className="map"
-            loading="lazy"
-            allowFullScreen
-            src="https://www.google.com/maps?q=Oaxaca%20de%20Ju%C3%A1rez%2C%20M%C3%A9xico&output=embed"
-            title="Zona de atención"
-          />
         </aside>
       </div>
     </div>
@@ -258,4 +270,3 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
     </>
   );
 }
-
