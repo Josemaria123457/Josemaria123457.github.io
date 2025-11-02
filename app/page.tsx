@@ -64,6 +64,69 @@ Sin interrupciones de servicio.</p>
           </div>
         </div>
       </section>
+{/* ===== QUIÉNES SOMOS (mitad imagen / mitad texto) ===== */}
+<section id="quienes-somos" className="band-1">
+  <div className="container">
+    <div
+      className="surface"
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "stretch",
+        overflow: "hidden",
+        borderRadius: "16px",
+      }}
+    >
+      {/* Columna izquierda: IMAGEN (desde internet) */}
+      <div
+        style={{
+          flex: "1 1 360px",
+          minHeight: "340px",
+          backgroundImage:
+            'url("https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?auto=format&fit=crop&w=1400&q=80")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "brightness(0.95)",
+          borderRadius: "20px",
+        }}
+        role="img"
+        aria-label="Equipo PINONET trabajando en diseño y desarrollo web"
+      />
+
+      {/* Columna derecha: TEXTO */}
+      <article
+        style={{
+          flex: "1 1 360px",
+          padding: "32px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          textAlign: "left",
+        }}
+      >
+        <span className="eyebrow">Equipo de trabajo PINONET desarrollando sitios web</span>
+        <h2 className="text-3xl font-bold" style={{ color: "var(--accent, #60a5fa)", marginBottom: "12px" }}>
+          Quiénes somos
+        </h2>
+
+        <p className="lead" style={{ marginBottom: 12 }}>
+          En <strong>PINONET</strong> combinamos <em>diseño, tecnología y estrategia</em> para construir
+          sitios web <b>profesionales, rápidos y optimizados</b> que impulsan resultados reales.
+        </p>
+        <p style={{ opacity: 0.85 }}>
+          Nuestro equipo trabaja con pasión y precisión para ofrecer rendimiento, seguridad y una
+          presencia digital que destaca.
+        </p>
+
+        <div style={{ marginTop: 20 }}>
+          <Link className="btn primary" href="https://www.pinonet.com/conocenos" aria-label="Ir a la página Conócenos">
+            Conócenos más
+          </Link>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
       {/* PROCESO */}
       <section id="proceso" className="band-2">

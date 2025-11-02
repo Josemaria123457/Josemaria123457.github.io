@@ -31,7 +31,7 @@
 .stat strong{font-size:1.15rem; display:block}
 .heroMedia{position:relative; display:grid; gap:12px; align-content:start}
 .heroImg{width:100%; height:240px; object-fit:cover; border-radius:16px; border:1px solid var(--line)}
-.heroImgSm{width:70%; height:140px; object-fit:cover; border-radius:16px; border:1px solid var(--line); justify-self:end}
+.heroImgSm{width:100%; height:140px; object-fit:cover; border-radius:16px; border:1px solid var(--line); justify-self:end}
 .heroBadge{position:absolute; bottom:12px; left:12px; background:rgba(59,130,246,.18); color:#071426; padding:6px 10px; border-radius:999px; font-weight:700; border:1px solid var(--line)}
 
 /* Secciones base */
