@@ -42,29 +42,6 @@ export default function PageServicios() {
         {JSON.stringify(ld)}
       </Script>
 
-      {/* Header */}
-      <header className={styles.header}>
-        <div className={`${styles.container} ${styles.nav}`}>
-          <div className={styles.brand}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" className={styles.brandIcon}>
-              <path d="M3 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0Z" stroke="currentColor" strokeWidth="2" />
-              <path d="M7 13.5 11 17l6-10" stroke="currentColor" strokeWidth="2" />
-            </svg>
-            <span className={styles.brandName}>PINONET</span>
-            <span className={styles.badge}>Servicios</span>
-          </div>
-          <nav aria-label="principal">
-            <ul className={styles.menu}>
-              <li><Link className={styles.link} href="/">Inicio</Link></li>
-              <li><a className={styles.link} href="#servicios">Servicios</a></li>
-              <li><a className={styles.link} href="#proceso">Proceso</a></li>
-              <li><a className={styles.cta} href="#contacto" data-cta="header">Cotiza tu web</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      {/* Main */}
       <main className={styles.container}>
         {/* HERO */}
         <section className={styles.hero} id="top">
