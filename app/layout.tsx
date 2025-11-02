@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Botón flotante de WhatsApp */}
         <a
-          href="https://wa.me/529532295158"
+          href="https://wa.me/529541210879"
           className="whatsapp-float"
           target="_blank"
           rel="noopener noreferrer nofollow"

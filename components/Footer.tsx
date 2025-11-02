@@ -15,8 +15,8 @@ export default function Footer() {
           <div className="footer-contact">
             <h4>Contacto</h4>
             <ul>
-              <li><a href="mailto:hola@pinonet.me">hola@pinonet.me</a></li>
-              <li><a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp (953) 229 5158</a></li>
+              <li><a href="mailto:contactanos@pinonet.me">contactanos@pinonet.me</a></li>
+              <li><a href="https://wa.me/529541210879" target="_blank" rel="noopener">WhatsApp (954) 121 0879</a></li>
               <li>Oaxaca, México</li>
             </ul>
           </div>

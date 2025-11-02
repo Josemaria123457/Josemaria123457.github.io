@@ -176,7 +176,7 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
   <div className="container">
     <div className="surface">
       <h2>Hablemos de tu proyecto</h2>
-      <p className="lead">Cuéntanos objetivos, plazos y referencias. Respondemos en &lt; 24 h.</p>
+      <p className="lead">Cuéntanos objetivos, plazos y referencias. Respondemos en menos de 24 h.</p>
 
       <div className="contact-wrap">
         {/* FORMULARIO */}
@@ -251,8 +251,8 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
 
   <button className="btn primary" type="submit">Solicitar propuesta</button>
   <p className="microcopy">
-    También puedes escribir a <a href="mailto:hola@pinonet.me">hola@pinonet.me</a> o por{" "}
-    <a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp</a>.
+    También puedes escribir a <a href="mailto:cotactanos@pinonet.me">cotactanos@pinonet.me</a> o por{" "}
+    <a href="https://wa.me/529541210879" target="_blank" rel="noopener">WhatsApp</a>.
   </p>
 </form>
 
@@ -261,8 +261,8 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
         <aside className="card contact-info">
           <h3>Contacto directo</h3>
           <ul className="small info-list">
-            <li>Email: <a href="mailto:hola@pinonet.me">hola@pinonet.me</a></li>
-            <li>WhatsApp: <a href="https://wa.me/529542724987" target="_blank" rel="noopener">(954) 272 4987</a></li>
+            <li>Email: <a href="mailto:cotactanos@pinonet.me">cotactanos@pinonet.me</a></li>
+            <li>WhatsApp: <a href="https://wa.me/529541210879" target="_blank" rel="noopener">(954) 121 0879</a></li>
             <li>Horario: Lun–Sab 10:00–18:00</li>
             <li>Ubicación: Oaxaca, México (remoto a todo MX)</li>
           </ul>

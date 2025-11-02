@@ -5,11 +5,7 @@ import Link from "next/link";
 type MenuItem = { label: string; href?: string; children?: { label: string; href: string }[] };
 
 const MENU: MenuItem[] = [
-  { label: "Servicios", children: [
-      { label: "Landing page", href: "#servicios" },
-      { label: "Sitio 3–5 secciones", href: "#servicios" },
-      { label: "E-commerce inicial", href: "#servicios" },
-    ]},
+  { label: "Servicios", href: "https://pinonet.me/servicios" },
   { label: "Proceso", href: "#proceso" },
   { label: "Portafolio", href: "#portafolio" },
   { label: "Planes", href: "#planes" },
