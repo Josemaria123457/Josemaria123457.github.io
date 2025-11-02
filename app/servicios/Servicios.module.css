@@ -1,3 +1,6 @@
+/* Globales explícitos (evita usarlos si puedes) */
+:global(*){ box-sizing:border-box; }
+:global(html, body){ height:100%; margin:0; }
 
 *{box-sizing:border-box}
 html,body{height:100%}
