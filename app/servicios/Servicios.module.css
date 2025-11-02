@@ -1,15 +1,17 @@
 /* app/servicios/Servicios.module.css */
-/* CSS Modules puros (sin selectores globales). El fondo/tema cuelga de .page */
+/* Tema oscuro + acento AZUL. Sin globales. */
 
 .page{
-  /* Variables del tema */
   --bg:#0b0f17; --panel:#121826; --text:#e5e7eb; --muted:#9aa4b2; --line:#1e2638;
-  --brand:#22c55e; --brand-ink:#052e16; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25);
-  --shadow-soft:0 6px 18px rgba(0,0,0,.18); --maxw:1120px;
+  --brand:#3b82f6;                /* AZUL a juego con el header */
+  --radius:18px; --shadow:0 12px 32px rgba(0,0,0,.28);
+  --shadow-soft:0 8px 22px rgba(0,0,0,.18); --maxw:1120px;
 
   min-height:100dvh;
-  background: radial-gradient(1200px 600px at 10% -10%, #111831 5%, transparent 60%),
-              radial-gradient(800px 400px at 90% -30%, #0f172a 10%, transparent 60%), var(--bg);
+  background:
+    radial-gradient(1600px 700px at 10% -20%, #111831 8%, transparent 60%),
+    radial-gradient(1200px 500px at 95% -30%, #0f172a 12%, transparent 60%),
+    var(--bg);
   color:var(--text);
   line-height:1.6;
   font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -17,32 +19,16 @@
 
 .container{max-width:var(--maxw); margin-inline:auto; padding-inline:20px}
 
-/* Header */
-.header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(180%) blur(8px);
-  background: rgba(11,15,23,.7); border-bottom:1px solid var(--line)}
-.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-.brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.5px}
-.brandIcon{display:block}
-.brandName{letter-spacing:.5px}
-.badge{padding:4px 10px; font-size:.75rem; border:1px solid var(--line); border-radius:999px; color:var(--muted)}
-.menu{display:flex; gap:18px; list-style:none; padding:0; margin:0}
-.link{padding:8px 12px; border-radius:10px; color:var(--muted); text-decoration:none}
-.link:hover{background:rgba(255,255,255,.04); color:var(--text)}
-.cta{display:inline-flex; align-items:center; gap:10px; background:var(--brand); color:#04130a;
-  border-radius:12px; padding:10px 14px; font-weight:600; box-shadow:var(--shadow-soft); text-decoration:none}
-
 /* Hero */
 .hero{padding:64px 0 28px}
-.eyebrow{display:inline-flex; gap:8px; align-items:center; font-size:.8rem; color:var(--muted); margin:0}
+.eyebrow{display:flex; gap:8px; flex-wrap:wrap; align-items:center; font-size:.8rem; color:var(--muted)}
+.badge{padding:4px 10px; font-size:.75rem; border:1px solid var(--line); border-radius:999px; color:#bbd7ff; background:rgba(59,130,246,.12)}
 .heroTitle{font-size: clamp(28px, 4vw, 46px); line-height:1.15; margin:8px 0 10px}
 .heroSubtitle{color:var(--muted); max-width:780px}
 .accent{color:var(--brand)}
-.tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
-.tag{font-size:.82rem; color:#bcd6c6; background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.25);
-  padding:6px 10px; border-radius:999px}
 .highlights{display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin:26px 0 14px}
-.highlight{background:linear-gradient(180deg, rgba(34,197,94,.06), transparent 130%); border:1px solid var(--line);
-  border-radius:var(--radius); padding:16px; text-align:center}
+.highlight{background:linear-gradient(180deg, rgba(59,130,246,.10), transparent 130%); border:1px solid var(--line);
+  border-radius:var(--radius); padding:16px; text-align:center; box-shadow:var(--shadow-soft)}
 .highlight strong{font-size:1.15rem}
 .highlight span{display:block; color:var(--muted); font-size:.9rem}
 
@@ -52,18 +38,29 @@
 
 /* Grid de cards */
 .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-.card{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-soft)}
-.cardBody{padding:18px}
+
+/* Tarjeta: igual altura + botones abajo */
+.card{
+  display:flex;               /* para igualar altura si hiciera falta */
+  background:var(--panel); border:1px solid var(--line);
+  border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow-soft);
+}
+.cardBody{
+  display:flex; flex-direction:column; gap:10px;
+  padding:18px; width:100%;
+}
 .cardTitle{margin:0 0 8px; font-size:1.25rem}
 .muted{color:var(--muted)}
-.features{display:grid; gap:8px; margin:12px 0 14px; padding-left:0; list-style:none}
+.features{display:grid; gap:8px; margin:12px 0 0; padding-left:0; list-style:none}
 .feature{display:flex; gap:10px; align-items:flex-start}
 
-/* Price & buttons */
-.price{display:flex; align-items:center; gap:8px; margin-top:6px}
-.actions{display:flex; gap:10px; margin-top:12px}
+/* Pie de la tarjeta pegado abajo */
+.cardFooter{margin-top:auto; display:flex; flex-direction:column; gap:12px}
+.price{display:flex; align-items:center; gap:8px}
+.actions{display:flex; gap:10px}
+
 .btn{display:inline-flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px; font-weight:600; border:1px solid var(--line); text-decoration:none}
-.primary{background:var(--brand); color:#04130a; border-color:transparent}
+.primary{background:var(--brand); color:#06142b; border-color:transparent}
 .ghost{color:var(--muted)}
 .btn:hover{transform:translateY(-1px)}
 
@@ -81,13 +78,13 @@
 .faqQ{cursor:pointer; font-weight:600}
 .faqA{color:var(--muted)}
 
-/* CTA box */
+/* CTA box (azul) */
 .ctaBox{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--line);
-  background:linear-gradient(90deg, rgba(34,197,94,.08), transparent); padding:18px; border-radius:var(--radius)}
+  background:linear-gradient(90deg, rgba(59,130,246,.12), transparent); padding:18px; border-radius:var(--radius)}
 .ctaActions{display:flex; gap:10px}
 .noMargin{margin:0}
 
-/* Footer */
+/* Footer local (si lo usas) */
 .footer{border-top:1px solid var(--line); color:var(--muted); padding:24px 0; margin-top:30px}
 
 /* Responsive */
