@@ -183,7 +183,7 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
         <form
           id="contacto-form"
           className="card contact-form"
-          action="https://formsubmit.co/hola@pinonet.me"
+          action="https://formsubmit.co/cotactanos@pinonet.me"
           method="POST"
         >
           {/* formsubmit */}
