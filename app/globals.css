@@ -1,3 +1,32 @@
+:root {
+  --gxs-bg: #f7f8fb;
+  --gxs-card-bg: #ffffff;
+  --gxs-text: #1f2937;
+  --gxs-muted: #4b5563;
+  --gxs-border: #e5e7eb;
+  --gxs-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  --gxs-radius-lg: 20px;
+  --gxs-radius-md: 12px;
+  --gxs-primary: #16a34a;
+  --gxs-primary-hover: #15803d;
+  --gxs-primary-50: #ecfdf5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gxs-bg: #0b0f14;
+    --gxs-card-bg: #0f1621;
+    --gxs-text: #e5e7eb;
+    --gxs-muted: #9ca3af;
+    --gxs-border: #1f2937;
+    --gxs-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    --gxs-primary-50: rgba(22, 163, 74, 0.15);
+  }
+}
+
+
+
+
 :root{
   /* ===== Paleta Tech (negro/azul) ===== */
   --bg:#070b10;
