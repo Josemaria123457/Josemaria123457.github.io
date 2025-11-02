@@ -1,3 +1,13 @@
+/* app/servicios/Servicios.module.css */
+
+:root{
+  --bg:#0b0f17; --panel:#121826; --text:#e5e7eb; --muted:#9aa4b2; --line:#1e2638;
+  --brand:#22c55e; --brand-ink:#052e16; --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25);
+  --shadow-soft:0 6px 18px rgba(0,0,0,.18); --maxw:1120px;
+}
+
+
+  /* ===== pagina de gracias en formulario ===== */
 :root {
   --gxs-bg: #f7f8fb;
   --gxs-card-bg: #ffffff;
