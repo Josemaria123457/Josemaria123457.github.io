@@ -166,8 +166,8 @@
 
 .gxsPill {
   border: 1px solid var(--gxs-border);
-  background: #000000;
-  color: var(--gxs-muted); /* corregido: antes ponía --gxsMuted */
+  background: #171717;
+  color: rgb(255, 255, 255) ;/* corregido: antes ponía --gxsMuted */
   padding: 6px 10px;
   border-radius: 999px;
   font-size: .85rem;
