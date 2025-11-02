@@ -145,7 +145,7 @@ export default function PageServicios() {
               <p className={`${styles.noMargin} ${styles.muted}`}>Cuéntanos objetivos, plazos y referencias. Respondemos en &lt; 24 h.</p>
             </div>
             <div className={styles.ctaActions}>
-              <a className={`${styles.btn} ${styles.primary}`} href="https://wa.me/52941210879" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+              <a className={`${styles.btn} ${styles.primary}`} href="https://wa.me/529541210879" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
               <a className={styles.btn} href="mailto:contactanos@pinonet.me">Enviar correo</a>
             </div>
           </div>
