@@ -180,73 +180,82 @@ Los sitios web más amplios se completan en un plazo aproximado de 2 a 3 semanas
 
       <div className="contact-wrap">
         {/* FORMULARIO */}
-        <form
-          id="contacto-form"
-          className="card contact-form"
-          action="https://formsubmit.co/cotactanos@pinonet.me"
-          method="POST"
-        >
-          {/* formsubmit */}
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Nueva solicitud PINONET" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="text" name="_honey" style={{ display: "none" }} />
+  <form
+  id="contacto-form"
+  className="card contact-form"
+  action="https://formsubmit.co/cotactanos@pinonet.me"
+  method="POST"
+>
+  {/* formsubmit */}
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_subject" value="Nueva solicitud PINONET" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_honey" style={{ display: "none" }} />
 
-          <div className="field">
-            <label htmlFor="c-nombre">Nombre <span className="req">*</span></label>
-            <input id="c-nombre" name="nombre" required autoComplete="name" placeholder="Tu nombre" />
-          </div>
+  {/* 🔽 NUEVO: redirección a tu página gracias */}
+  <input type="hidden" name="_next" value="https://www.pinonet.me/gracias" />
 
-          <div className="row two">
-            <div className="field">
-              <label htmlFor="c-correo">Correo <span className="req">*</span></label>
-              <input id="c-correo" name="correo" type="email" required autoComplete="email" placeholder="tu@correo.com" />
-            </div>
-            <div className="field">
-              <label htmlFor="c-whats">WhatsApp</label>
-              <input id="c-whats" name="whatsapp" inputMode="tel" placeholder="+52 9xx xxx xxxx" />
-            </div>
-          </div>
+  <div className="field">
+    <label htmlFor="c-nombre">Nombre <span className="req">*</span></label>
+    <input id="c-nombre" name="nombre" required autoComplete="name" placeholder="Tu nombre" />
+  </div>
 
-          <div className="row two">
-            <div className="field">
-              <label htmlFor="c-tipo">Tipo de sitio</label>
-              <select id="c-tipo" name="tipo" defaultValue="">
-                <option value="" disabled>Elige una opción</option>
-                <option>Landing</option>
-                <option>Sitio 3–5 secciones</option>
-                <option>E-commerce inicial</option>
-                <option>Rediseño / Migración</option>
-              </select>
-            </div>
-            <div className="field">
-              <label htmlFor="c-plazo">Plazo objetivo</label>
-              <select id="c-plazo" name="plazo" defaultValue="">
-                <option value="" disabled>Selecciona</option>
-                <option>1 semana</option>
-                <option>2–3 semanas</option>
-                <option>1 mes</option>
-              </select>
-            </div>
-          </div>
+  <div className="row two">
+    <div className="field">
+      <label htmlFor="c-correo">Correo <span className="req">*</span></label>
+      <input id="c-correo" name="correo" type="email" required autoComplete="email" placeholder="tu@correo.com" />
+    </div>
+    <div className="field">
+      <label htmlFor="c-whats">WhatsApp</label>
+      <input id="c-whats" name="whatsapp" inputMode="tel" placeholder="+52 9xx xxx xxxx" />
+    </div>
+  </div>
 
-          <div className="field">
-            <label htmlFor="c-mensaje">Mensaje <span className="req">*</span></label>
-            <textarea id="c-mensaje" name="mensaje" rows={4} required
-              placeholder="Objetivos, referencias y plazos" />
-          </div>
+  <div className="row two">
+    <div className="field">
+      <label htmlFor="c-tipo">Tipo de sitio</label>
+      <select id="c-tipo" name="tipo" defaultValue="">
+        <option value="" disabled>Elige una opción</option>
+        <option>Landing</option>
+        <option>Sitio 3–5 secciones</option>
+        <option>E-commerce inicial</option>
+        <option>Rediseño / Migración</option>
+      </select>
+    </div>
+    <div className="field">
+      <label htmlFor="c-plazo">Plazo objetivo</label>
+      <select id="c-plazo" name="plazo" defaultValue="">
+        <option value="" disabled>Selecciona</option>
+        <option>1 semana</option>
+        <option>2–3 semanas</option>
+        <option>1 mes</option>
+      </select>
+    </div>
+  </div>
 
-          <label className="check">
-            <input type="checkbox" name="acepta" required />
-            <span className="check-text">Acepto el tratamiento de mis datos.</span>
-          </label>
+  <div className="field">
+    <label htmlFor="c-mensaje">Mensaje <span className="req">*</span></label>
+    <textarea
+      id="c-mensaje"
+      name="mensaje"
+      rows={4}
+      required
+      placeholder="Objetivos, referencias y plazos"
+    />
+  </div>
 
-          <button className="btn primary" type="submit">Solicitar propuesta</button>
-          <p className="microcopy">
-            También puedes escribir a <a href="mailto:hola@pinonet.me">hola@pinonet.me</a> o por{" "}
-            <a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp</a>.
-          </p>
-        </form>
+  <label className="check">
+    <input type="checkbox" name="acepta" required />
+    <span className="check-text">Acepto el tratamiento de mis datos.</span>
+  </label>
+
+  <button className="btn primary" type="submit">Solicitar propuesta</button>
+  <p className="microcopy">
+    También puedes escribir a <a href="mailto:hola@pinonet.me">hola@pinonet.me</a> o por{" "}
+    <a href="https://wa.me/529532295158" target="_blank" rel="noopener">WhatsApp</a>.
+  </p>
+</form>
+
 
         {/* INFO */}
         <aside className="card contact-info">
