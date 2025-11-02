@@ -28,6 +28,7 @@ export default function Header() {
 
   return (
     <header className="site-header" ref={headerRef}>
+      <meta name="google-site-verification" content="z1ZtZZI2j_sa1V2bOeVZwbVhieZPwEX6cp0Z8iCi6SU" />
       <div className="container">
         <nav className="nav" aria-label="Principal">
           <Link className="brand" href="/" onClick={() => setOpenMenu(false)}>
