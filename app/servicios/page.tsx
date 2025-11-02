@@ -142,7 +142,7 @@ export default function PageServicios() {
           <div className={styles.ctaBox}>
             <div>
               <h2 className={styles.noMargin} id="t-contacto">¿Listo para empezar?</h2>
-              <p className={`${styles.noMargin} ${styles.muted}`}>Cuéntanos objetivos, plazos y referencias. Respondemos en &lt; 24 h.</p>
+              <p className={`${styles.noMargin} ${styles.muted}`}>Cuéntanos objetivos, plazos y referencias. Respondemos en menos de 24 h.</p>
             </div>
             <div className={styles.ctaActions}>
               <a className={`${styles.btn} ${styles.primary}`} href="https://wa.me/529541210879" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
