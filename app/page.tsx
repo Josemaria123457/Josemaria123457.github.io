@@ -119,7 +119,7 @@ Sin interrupciones de servicio.</p>
         </p>
 
         <div style={{ marginTop: 20 }}>
-          <Link className="btn primary" href="https://www.pinonet.com/conocenos" aria-label="Ir a la página Conócenos">
+          <Link className="btn primary" href="https://www.pinonet.me/conocenos" aria-label="Ir a la página Conócenos">
             Conócenos más
           </Link>
         </div>
