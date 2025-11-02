@@ -1,6 +1,6 @@
 
 /* ===== A partir de aquí, tus clases locales del module (sin cambios) ===== */
-
+gxsPill
 .gxsRoot {
   min-height: 80vh;
   display: grid;
@@ -167,7 +167,7 @@
 
 .gxsPill {
   border: 1px solid var(--gxs-border);
-  background: #fafafa;
+  background: #000000;
   color: var(--gxs-muted); /* corregido: antes ponía --gxsMuted */
   padding: 6px 10px;
   border-radius: 999px;
