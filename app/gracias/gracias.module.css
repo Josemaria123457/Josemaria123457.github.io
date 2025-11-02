@@ -1,4 +1,5 @@
-:root {
+/* ===== Variables globales accesibles desde el module ===== */
+:global(:root) {
   --gxs-bg: #f7f8fb;
   --gxs-card-bg: #ffffff;
   --gxs-text: #1f2937; /* gris 800 */
@@ -13,7 +14,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :global(:root) {
     --gxs-bg: #0b0f14;
     --gxs-card-bg: #0f1621;
     --gxs-text: #e5e7eb;
@@ -24,7 +25,8 @@
   }
 }
 
-/* Layout */
+/* ===== A partir de aquí, tus clases locales del module (sin cambios) ===== */
+
 .gxsRoot {
   min-height: 80vh;
   display: grid;
@@ -38,7 +40,6 @@
   max-width: 980px;
 }
 
-/* Card */
 .gxsCard {
   background: var(--gxs-card-bg);
   color: var(--gxs-text);
@@ -48,10 +49,7 @@
   padding: clamp(24px, 3vw, 40px);
 }
 
-/* Header */
-.gxsHeader {
-  text-align: center;
-}
+.gxsHeader { text-align: center; }
 
 .gxsIcon {
   width: 60px;
@@ -79,7 +77,6 @@
   max-width: 60ch;
 }
 
-/* Grid de bloques */
 .gxsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -88,16 +85,14 @@
 }
 
 @media (max-width: 720px) {
-  .gxsGrid {
-    grid-template-columns: 1fr;
-  }
+  .gxsGrid { grid-template-columns: 1fr; }
 }
 
 .gxsBlock {
   border: 1px solid var(--gxs-border);
   border-radius: var(--gxs-radius-md);
   padding: 16px 16px 14px;
-  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(0, 0, 0, 0.02) 100%);
+  background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.02) 100%);
 }
 
 .gxsBlockTitle {
@@ -112,10 +107,7 @@
   color: var(--gxs-text);
 }
 
-/* Próximos pasos */
-.gxsSteps {
-  margin-top: 28px;
-}
+.gxsSteps { margin-top: 28px; }
 
 .gxsSectionTitle {
   font-size: 1.05rem;
@@ -153,7 +145,6 @@
   font-weight: 700;
 }
 
-/* CTAs */
 .gxsCtas {
   display: flex;
   flex-wrap: wrap;
@@ -171,42 +162,27 @@
   border-radius: 12px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.06s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: transform .06s ease, background .2s ease, color .2s ease, border-color .2s ease;
   border: 1px solid transparent;
 }
 
-.gxsBtn:active {
-  transform: translateY(1px);
-}
-
-.gxsBtn:focus-visible {
-  outline: 2px solid var(--gxs-primary);
-  outline-offset: 2px;
-}
+.gxsBtn:active { transform: translateY(1px); }
+.gxsBtn:focus-visible { outline: 2px solid var(--gxs-primary); outline-offset: 2px; }
 
 .gxsBtnPrimary {
   background: var(--gxs-primary);
   color: #fff;
 }
-
-.gxsBtnPrimary:hover {
-  background: var(--gxs-primary-hover);
-}
+.gxsBtnPrimary:hover { background: var(--gxs-primary-hover); }
 
 .gxsBtnSecondary {
   background: transparent;
   border-color: var(--gxs-border);
   color: var(--gxs-text);
 }
+.gxsBtnSecondary:hover { background: rgba(0,0,0,0.04); }
 
-.gxsBtnSecondary:hover {
-  background: rgba(0, 0, 0, 0.04);
-}
-
-/* Cintillo de confianza */
-.gxsTrust {
-  margin-top: 22px;
-}
+.gxsTrust { margin-top: 22px; }
 
 .gxsTrustRow {
   display: flex;
@@ -218,17 +194,13 @@
 .gxsPill {
   border: 1px solid var(--gxs-border);
   background: #fafafa;
-  color: var(--gxsMuted);
+  color: var(--gxs-muted); /* corregido: antes ponía --gxsMuted */
   padding: 6px 10px;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: .85rem;
 }
-.gxsPill { color: var(--gxs-muted); } /* corrige variable */
 
-/* FAQ */
-.gxsFaq {
-  margin-top: 28px;
-}
+.gxsFaq { margin-top: 28px; }
 
 .gxsQa {
   border: 1px solid var(--gxs-border);
@@ -244,41 +216,26 @@
   font-weight: 600;
 }
 
-.gxsQa[open] > summary {
-  border-bottom: 1px solid var(--gxs-border);
-}
+.gxsQa[open] > summary { border-bottom: 1px solid var(--gxs-border); }
 
-.gxsQa > summary::-webkit-details-marker {
-  display: none;
-}
+.gxsQa > summary::-webkit-details-marker { display: none; }
 
 .gxsQa > summary:after {
   content: "+";
   float: right;
-  transition: transform 0.2s ease;
+  transition: transform .2s ease;
 }
+.gxsQa[open] > summary:after { content: "–"; }
 
-.gxsQa[open] > summary:after {
-  content: "–";
-}
+.gxsQaA { padding: 14px 16px; color: var(--gxs-muted); line-height: 1.7; }
 
-.gxsQaA {
-  padding: 14px 16px;
-  color: var(--gxs-muted);
-  line-height: 1.7;
-}
-
-/* Footer */
 .gxsFooter {
   margin-top: 24px;
-  font-size: 0.85rem;
+  font-size: .85rem;
   color: var(--gxs-muted);
   text-align: center;
 }
 
-/* Motion safe */
 @media (prefers-reduced-motion: reduce) {
-  .gxsBtn {
-    transition: none;
-  }
+  .gxsBtn { transition: none; }
 }
