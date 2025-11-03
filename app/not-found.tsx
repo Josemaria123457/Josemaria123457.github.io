@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "./not-found.module.css";
-
+import Search404 from "../components/Search404";
+// ...
+<Search404 />
 export default function NotFound() {
   return (
     <section className="band-2" aria-labelledby="t-404">
@@ -38,16 +40,11 @@ export default function NotFound() {
           </div>
 
           {/* Barra de búsqueda decorativa (sin handler) */}
-          <form className={styles.search} role="search" aria-label="Buscar contenido">
-            <input
-              className={styles.input}
-              placeholder="Buscar: servicios, planes, portafolio…"
-              aria-label="Buscar"
-            />
-            <button className={`btn ${styles.searchBtn}`} type="button">
-              Buscar
-            </button>
-          </form>
+<form className={styles.search} role="search" action="/buscar" method="GET">
+  <input className={styles.input} name="q" placeholder="Buscar: servicios, planes, portafolio…" aria-label="Buscar" />
+  <button className={`btn ${styles.searchBtn}`} type="submit">Buscar</button>
+</form>
+
 
           {/* Enlaces rápidos */}
           <div className={styles.quicklinks}>
