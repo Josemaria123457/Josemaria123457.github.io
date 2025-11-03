@@ -155,31 +155,63 @@ Sin interrupciones de servicio.</p>
       */}
       {(() => {
         const proyectos = [
-          { titulo: "Proyecto #1", slug: "https://alianzama.edu.mx", img: "/portafolio/proyecto-1.jpg", excerpt:"Landing orientada a conversión." },
-          { titulo: "Proyecto #2", slug: "proyecto-2", img: "/portafolio/proyecto-2.jpg", excerpt:"Landing orientada a conversión." },
-          { titulo: "Proyecto #3", slug: "proyecto-3", img: "/portafolio/proyecto-3.jpg", excerpt:"Landing orientada a conversión." },
-          { titulo: "Proyecto #4", slug: "proyecto-4", img: "/portafolio/proyecto-4.jpg", excerpt:"Landing orientada a conversión." },
-        ];
+    {
+      titulo: "Barbería Tradicional",
+      slug: "https://pinonet.me/proyectos/barberia",
+      img: "/portafolio/barberia.jpg",
+      excerpt: "Sitio elegante y cálido para una barbería local.",
+    },
+    {
+      titulo: "Restaurante La Mesa",
+      slug: "https://restaurant-lamesa.vercel.app",
+      img: "/portafolio/restaurante.jpg",
+      excerpt: "Web moderna para restaurante con menú digital.",
+    },
+    {
+      titulo: "Consultora Nova",
+      slug: "/proyectos/consultora",
+      img: "/portafolio/consultora.jpg",
+      excerpt: "Página corporativa profesional y responsiva.",
+    },
+    {
+      titulo: "Tienda Verde",
+      slug: "https://tienda-verde.com.mx",
+      img: "/portafolio/tienda-verde.jpg",
+      excerpt: "E-commerce sostenible con carrito y pagos en línea.",
+    },
+  ];
 
-        return (
-          <div className="grid cards">
-            {proyectos.map((p) => (
-              <article key={p.slug} className="card portfolio-card">
-                <Link className="card-link" href={`/proyectos/${p.slug}`} aria-label={`Abrir ${p.titulo}`}>
-                  <img
-                    className="thumb"
-                    src={p.img}
-                    alt={p.titulo}
-                    loading="lazy"
-                  />
-                  <h3>{p.titulo}</h3>
-                  <p>{p.excerpt}</p>
-                </Link>
-              </article>
-            ))}
-          </div>
+  return (
+    <div className="grid cards">
+      {proyectos.map((p) => {
+        const isExternal = p.slug.startsWith("http");
+        const content = (
+          <article className="card portfolio-card">
+            <img className="thumb" src={p.img} alt={p.titulo} loading="lazy" />
+            <h3>{p.titulo}</h3>
+            <p>{p.excerpt}</p>
+          </article>
         );
-      })()}
+
+        return isExternal ? (
+          <a
+            key={p.slug}
+            href={p.slug}
+            className="card-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {content}
+          </a>
+        ) : (
+          <Link key={p.slug} href={p.slug} className="card-link">
+            {content}
+          </Link>
+        );
+      })}
+    </div>
+  );
+})()}
     </div>
   </div>
 </section>
