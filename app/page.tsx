@@ -158,7 +158,7 @@ Sin interrupciones de servicio.</p>
     {
       titulo: "Barbería Tradicional",
       slug: "https://alianzama.edu.mx",
-      img: "/portafolio/barberia.jpg",
+      img: "/proyectos/miniaturas/alianzama.png",
       excerpt: "Sitio elegante y cálido para una barbería local.",
     },
     {
