@@ -156,10 +156,10 @@ Sin interrupciones de servicio.</p>
       {(() => {
         const proyectos = [
     {
-      titulo: "Barbería Tradicional",
+      titulo: "Alianza MA",
       slug: "https://alianzama.edu.mx",
       img: "/proyectos/miniaturas/alianzama.png",
-      excerpt: "Sitio elegante y cálido para una barbería local.",
+      excerpt: "sitio web para una institución educativa.",
     },
     {
       titulo: "Restaurante La Mesa",
