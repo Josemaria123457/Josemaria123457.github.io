@@ -157,7 +157,7 @@ Sin interrupciones de servicio.</p>
         const proyectos = [
     {
       titulo: "Barbería Tradicional",
-      slug: "https://pinonet.me/proyectos/barberia",
+      slug: "https://alianzama.edu.mx",
       img: "/portafolio/barberia.jpg",
       excerpt: "Sitio elegante y cálido para una barbería local.",
     },
