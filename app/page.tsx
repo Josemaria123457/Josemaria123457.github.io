@@ -16,7 +16,7 @@ export default function Page() {
             </div>
 
             <div className="cta">
-              <a className="btn primary" href="#planes">Ver planes</a>
+              <a className="btn primary" href="https://www.ejemplo.com/servicios">Ver planes</a>
               <a className="btn" href="#contacto">Solicitar cotización</a>
             </div>
 
@@ -155,7 +155,7 @@ Sin interrupciones de servicio.</p>
       */}
       {(() => {
         const proyectos = [
-          { titulo: "Proyecto #1", slug: "proyecto-1", img: "/portafolio/proyecto-1.jpg", excerpt:"Landing orientada a conversión." },
+          { titulo: "Proyecto #1", slug: "https://alianzama.edu.mx", img: "/portafolio/proyecto-1.jpg", excerpt:"Landing orientada a conversión." },
           { titulo: "Proyecto #2", slug: "proyecto-2", img: "/portafolio/proyecto-2.jpg", excerpt:"Landing orientada a conversión." },
           { titulo: "Proyecto #3", slug: "proyecto-3", img: "/portafolio/proyecto-3.jpg", excerpt:"Landing orientada a conversión." },
           { titulo: "Proyecto #4", slug: "proyecto-4", img: "/portafolio/proyecto-4.jpg", excerpt:"Landing orientada a conversión." },
