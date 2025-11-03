@@ -42,8 +42,9 @@ export default function NotFound() {
           {/* Barra de búsqueda decorativa (sin handler) */}
 <form className={styles.search} role="search" action="/buscar" method="GET">
   <input className={styles.input} name="q" placeholder="Buscar: servicios, planes, portafolio…" aria-label="Buscar" />
-  <button className={`btn ${styles.searchBtn}`} type="submit">Buscar</button>
+  <button className={`btn ${styles.searchBtn}`} type="submit">Busca</button>
 </form>
+
 
 
           {/* Enlaces rápidos */}
