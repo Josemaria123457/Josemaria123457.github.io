@@ -365,7 +365,7 @@ export default function Page() {
               <form
                 id="contacto-form"
                 className="card contact-form"
-                action="https://formsubmit.co/contactanos@pinonet.me"
+                action="https://formsubmit.co/cotactanos@pinonet.me"
                 method="POST"
               >
                 <input type="hidden" name="_captcha" value="false" />
