@@ -96,3 +96,28 @@
   .kpis{grid-template-columns:1fr}
   .logos{grid-template-columns:repeat(3,1fr)}
 }
+
+
+
+.story details {
+  margin-bottom: 1rem;
+  border: 1px solid #122f6a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background: #06142b;
+  transition: all 0.3s ease;
+}
+
+.story summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.story summary::-webkit-details-marker {
+  display: none;
+}
+
+.story details[open] {
+  background: #06142b;
+  border-color: var(--accent, #3b82f6);
+}

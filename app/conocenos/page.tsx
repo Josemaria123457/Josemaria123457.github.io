@@ -77,13 +77,14 @@ export default function Pageconocenos() {
           <h2 className={styles.sectionTitle} id="t-historia">Nuestra historia</h2>
           <div className={styles.story}>
             <p>
-              PINONET nació con un objetivo claro: construir sitios web que realmente{" "}
-              <em>ayuden a vender</em>. Partimos de proyectos pequeños para negocios locales y
-              fuimos perfeccionando un proceso ágil que prioriza resultados, no solo estética.
+              PINONET nació como una empresa dedicada al diseño y desarrollo de páginas web personalizadas,
+              enfocadas en ayudar a pequeñas y medianas empresas a fortalecer su presencia digital
+              y atraer más clientes por internet.
             </p>
             <p>
-              Hoy combinamos investigación, redacción persuasiva, diseño limpio y desarrollo
-              moderno para entregar webs que cargan rápido, se posicionan mejor y convierten más.
+              Ofrecemos soluciones creativas, funcionales y accesibles que reflejan la identidad de cada marca
+              y mejoran su posicionamiento en línea, impulsando el crecimiento de nuestros clientes en el entorno
+              tecnológico actual.
             </p>
           </div>
         </section>
@@ -95,23 +96,25 @@ export default function Pageconocenos() {
             <div className={styles.valueCard}>
               <h3 className={styles.valueTitle}>Visión</h3>
               <p className={styles.valueText}>
-                Ser el estudio de referencia para marcas que buscan sitios web
-                rápidos, claros y medibles, elevando el estándar de la web en México.
+                Ser una empresa reconocida a nivel nacional por ofrecer servicios digitales confiables y modernos,
+                contribuyendo al desarrollo tecnológico de las empresas mexicanas y convirtiéndonos en un referente
+                en diseño web y marketing digital.
               </p>
             </div>
             <div className={styles.valueCard}>
               <h3 className={styles.valueTitle}>Misión</h3>
               <p className={styles.valueText}>
-                Crear experiencias digitales que conviertan: estrategia, diseño y
-                tecnología alineados a objetivos de negocio, con soporte cercano.
+                Brindar soluciones web innovadoras y personalizadas que impulsen la transformación digital de nuestros clientes,
+                combinando creatividad, tecnología y compromiso con la calidad.
               </p>
             </div>
             <div className={styles.valueCard}>
               <h3 className={styles.valueTitle}>Objetivos</h3>
               <ul className={styles.valueList}>
-                <li>Mejorar la conversión de nuestros clientes con webs de alto rendimiento.</li>
-                <li>Entregar procesos claros, medibles y escalables.</li>
-                <li>Construir relaciones de largo plazo basadas en confianza y resultados.</li>
+                <li>Diseñar y publicar al menos 10 sitios web durante el primer año.</li>
+                <li>Alcanzar un nivel de satisfacción del cliente superior al 90%.</li>
+                <li>Lograr una rentabilidad mínima del 25% anual.</li>
+                <li>Expandir los servicios a marketing digital y posicionamiento SEO en el segundo año.</li>
               </ul>
             </div>
           </div>
@@ -121,7 +124,14 @@ export default function Pageconocenos() {
         <section className={styles.section} aria-labelledby="t-valores">
           <h2 className={styles.sectionTitle} id="t-valores">Nuestros valores</h2>
           <div className={styles.badgeRow}>
-            {["Claridad", "Rendimiento", "Accesibilidad", "Medición", "Seguridad"].map((v) => (
+            {[
+              "Innovación",
+              "Responsabilidad",
+              "Trabajo en equipo",
+              "Calidad",
+              "Honestidad",
+              "Compromiso con el cliente",
+            ].map((v) => (
               <span key={v} className={styles.badge}>{v}</span>
             ))}
           </div>
@@ -156,43 +166,43 @@ export default function Pageconocenos() {
           <div className={styles.team}>
             {[
               {
-                name: "Sarabio Perez Jose Maria.",
-                role: "socio",
+                name: "José María",
+                role: "Director General (CEO) / Diseñador Web Principal",
                 img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
               },
               {
-                name: "erik",
-                role: "socio",
+                name: "Frida Stephanie",
+                role: "Gerente de Operaciones",
                 img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
               },
               {
-                name: "Estefany",
-                role: "socio",
-                img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
-              },
-              {
-                name: "librado",
-                role: "socio",
+                name: "Erick",
+                role: "Subdirector Administrativo y Financiero",
                 img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
               },
               {
                 name: "Diego",
-                role: "socio",
+                role: "Community Manager / Marketing Digital",
                 img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
               },
               {
-                name: "Alexander",
-                role: "socio",
+                name: "Michael Alexander",
+                role: "Atención al Cliente y Ventas",
                 img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
               },
               {
                 name: "Abad",
-                role: "socio",
+                role: "Diseñador Gráfico / Creativo Visual",
                 img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
-              }
+              },
+              {
+                name: "Librado",
+                role: "Analista de Proyectos y Soporte Técnico",
+                img: "https://images.unsplash.com/photo-1573496529574-be85d6a60704?q=80&w=800&auto=format&fit=crop",
+              },
             ].map((m, i) => (
               <article className={styles.member} key={i}>
-                  <img className={styles.avatar} src={m.img} alt={m.name} loading="lazy" />
+                <img className={styles.avatar} src={m.img} alt={m.name} loading="lazy" />
                 <div className={styles.memberInfo}>
                   <strong>{m.name}</strong>
                   <span className={styles.muted}>{m.role}</span>
@@ -209,6 +219,37 @@ export default function Pageconocenos() {
             <div className={styles.kpiCard}><strong>+50</strong><span>Secciones entregadas</span></div>
             <div className={styles.kpiCard}><strong>&lt;1s</strong><span>TTFB promedio</span></div>
             <div className={styles.kpiCard}><strong>100%</strong><span>SSL & deploy</span></div>
+          </div>
+        </section>
+
+        {/* FAQ DESPLEGABLE */}
+        <section className={styles.section} aria-labelledby="t-faq">
+          <h2 className={styles.sectionTitle} id="t-faq">Preguntas frecuentes</h2>
+          <div className={styles.story}>
+            <details>
+              <summary><strong>¿Qué significa TTFB promedio?</strong></summary>
+              <p>
+                <strong>TTFB</strong> (Time To First Byte) mide el tiempo que tarda el servidor en enviar
+                la primera respuesta al navegador. Un valor menor a 1 segundo indica que nuestros sitios
+                son rápidos y eficientes desde el primer byte.
+              </p>
+            </details>
+
+            <details>
+              <summary><strong>¿Qué quiere decir “100% SSL & deploy”?</strong></summary>
+              <p>
+                Significa que todos nuestros proyectos se entregan <strong>seguros y completamente publicados</strong>:
+                con certificado SSL (HTTPS) incluido y con el despliegue técnico hecho, listos para ser visitados en línea.
+              </p>
+            </details>
+
+            <details>
+              <summary><strong>¿Por qué estas métricas son importantes?</strong></summary>
+              <p>
+                Reflejan nuestro compromiso con la calidad técnica. Un bajo TTFB mejora la experiencia del usuario
+                y el SEO, mientras que el SSL garantiza confianza y seguridad para los visitantes.
+              </p>
+            </details>
           </div>
         </section>
 

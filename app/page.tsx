@@ -45,24 +45,23 @@ export default function Page() {
             <p className="lead">Paquetes diseñados para negocios locales, emprendedores y pequeñas o medianas empresas.</p>
             <div className="grid cards">
               <article className="card">
-                <h3>Landing de alto impacto</h3>
-                <p>Página diseñada para captar clientes: mensajes claros, llamada a la acción, contacto directo por WhatsApp y métricas de conversión.</p>
+                <h3>Paquete Estándar</h3>
+                <p>
+                  Creación de una página web básica con diseño personalizado, hasta 5 secciones
+                  (inicio, servicios, contacto, galería, etc.), dominio personalizado y alojamiento inicial.
+                </p>
                 <span className="tag">Entrega desde 7 días</span>
+                <span className="tag">Costo estimado: $1,500–$2,000 MXN</span>
               </article>
+
               <article className="card">
-                <h3>Sitio corporativo 3–5 secciones</h3>
-                <p>Incluye página de inicio, servicios, sobre nosotros, contacto y blog opcional. Optimizado para SEO y rendimiento.</p>
-                <span className="tag">SEO + rendimiento</span>
-              </article>
-              <article className="card">
-                <h3>Tienda en línea básica</h3>
-                <p>Catálogo inicial, integración de pagos y capacitación para administrar productos. Ideal para comenzar a vender en línea.</p>
-                <span className="tag">Escalable</span>
-              </article>
-              <article className="card">
-                <h3>Rediseño & migración</h3>
-                <p>Actualizamos o migramos su sitio desde Wix o WordPress a una versión moderna, veloz y segura. Sin interrupciones de servicio.</p>
-                <span className="tag">Sin caídas</span>
+                <h3>Paquete Premium</h3>
+                <p>
+                  Incluye todo lo del paquete estándar más mantenimiento mensual, optimización SEO básica,
+                  actualización de contenido y soporte técnico continuo.
+                </p>
+                <span className="tag">1–3 semanas</span>
+                <span className="tag">Desde $3,000 MXN</span>
               </article>
             </div>
           </div>
@@ -176,22 +175,10 @@ export default function Page() {
                   excerpt: "Sitio web para una institución educativa.",
                 },
                 {
-                  titulo: "Restaurante La Mesa",
-                  slug: "https://restaurant-lamesa.vercel.app",
-                  img: "/portafolio/restaurante.jpg",
-                  excerpt: "Web moderna para restaurante con menú digital.",
-                },
-                {
-                  titulo: "Consultora Nova",
-                  slug: "/proyectos/consultora",
-                  img: "/portafolio/consultora.jpg",
-                  excerpt: "Página corporativa profesional y responsiva.",
-                },
-                {
-                  titulo: "Tienda Verde",
-                  slug: "https://tienda-verde.com.mx",
-                  img: "/portafolio/tienda-verde.jpg",
-                  excerpt: "E-commerce sostenible con carrito y pagos en línea.",
+                  titulo: "",
+                  slug: "",
+                  img: "",
+                  excerpt: "",
                 },
               ];
 
@@ -230,6 +217,7 @@ export default function Page() {
         </div>
       </section>
 
+
       {/* PLANES */}
       <section id="planes" className="band-1">
         <div className="container">
@@ -238,29 +226,28 @@ export default function Page() {
             <p className="lead">Facturación en MXN. Personalizamos cualquier plan.</p>
             <div className="grid cards">
               <article className="card">
-                <h3>Landing</h3>
-                <p>$2,900 MXN</p>
+                <h3>Paquete Estándar</h3>
+                <p>$1,500–$2,000 MXN</p>
                 <ul className="small">
-                  <li>1 sección</li><li>WhatsApp/CTA</li><li>SEO base</li><li>1 mes de soporte</li>
+                  <li>Hasta 5 secciones</li>
+                  <li>Diseño personalizado</li>
+                  <li>Dominio personalizado</li>
+                  <li>Alojamiento inicial</li>
                 </ul>
               </article>
               <article className="card">
-                <h3>Negocio</h3>
-                <p>$7,900 MXN</p>
+                <h3>Paquete Premium</h3>
+                <p>Desde $3,000 MXN</p>
                 <ul className="small">
-                  <li>3–5 secciones</li><li>Analítica + eventos</li><li>2 meses soporte</li><li>Dominio + hosting*</li>
-                </ul>
-              </article>
-              <article className="card">
-                <h3>E-commerce inicial</h3>
-                <p>$10,900 MXN</p>
-                <ul className="small">
-                  <li>Catálogo básico</li><li>Checkout externo</li><li>Capacitación</li><li>3 meses soporte</li>
+                  <li>Mantenimiento mensual</li>
+                  <li>Optimización SEO básica</li>
+                  <li>Actualización de contenido</li>
+                  <li>Soporte técnico continuo</li>
                 </ul>
               </article>
             </div>
             <p className="small" style={{ marginTop: 8 }}>
-              *Dominio y hosting incluidos el primer año en planes Negocio/E-commerce.
+              Costos estimados: pueden variar según alcance y requerimientos del proyecto.
             </p>
           </div>
         </div>
@@ -409,10 +396,9 @@ export default function Page() {
                     <label htmlFor="c-tipo">Tipo de sitio</label>
                     <select id="c-tipo" name="tipo" defaultValue="">
                       <option value="" disabled>Elige una opción</option>
-                      <option>Landing</option>
-                      <option>Sitio 3–5 secciones</option>
-                      <option>E-commerce inicial</option>
-                      <option>Rediseño / Migración</option>
+                      <option>Paquete estándar</option>
+                      <option>Paquete Premium</option>
+                      <option>personalizado</option>
                     </select>
                   </div>
                   <div className="field">
@@ -421,7 +407,7 @@ export default function Page() {
                       <option value="" disabled>Selecciona</option>
                       <option>1 semana</option>
                       <option>2–3 semanas</option>
-                      <option>1 mes</option>
+                      <option>no definido</option>
                     </select>
                   </div>
                 </div>

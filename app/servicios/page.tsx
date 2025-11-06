@@ -43,57 +43,41 @@ export default function PageServicios() {
         <section className={styles.section} id="servicios" aria-labelledby="t-servicios">
           <h2 className={styles.sectionTitle} id="t-servicios">Paquetes de servicio</h2>
           <div className={styles.grid}>
+            {/* Paquete Estándar (del PDF) */}
             <ServiceCard
               eyebrowIcon={<ListIcon />}
-              eyebrow="Landing de alto impacto"
-              title="Captura clientes con claridad"
-              desc="Página enfocada en un objetivo: convertir. Mensaje claro, CTA visible, WhatsApp y métricas listas."
+              eyebrow="Paquete Estándar"
+              title="Sitio básico profesional"
+              desc="Creación de una página web básica con diseño personalizado, hasta 5 secciones (inicio, servicios, contacto, galería, etc.), dominio personalizado y alojamiento inicial."
               features={[
-                "Copy orientado a conversión",
-                "Integración WhatsApp + eventos",
-                "SEO técnico base",
+                "Hasta 5 secciones",
+                "Diseño personalizado",
+                "Dominio personalizado",
+                "Alojamiento inicial",
               ]}
-              price="$2,900 MXN"
-              primaryHref="#contacto"
-              secondaryHref="#faq"
-              secondaryLabel="Ver preguntas"
-            />
-
-            <ServiceCard
-              eyebrowIcon={<BuildingIcon />}
-              eyebrow="Sitio corporativo 3–5 secciones"
-              title="Presencia sólida y escalable"
-              desc="Inicio, servicios, sobre nosotros, contacto y blog opcional. Rendimiento y SEO listos."
-              features={["CMS ligero y seguro", "Accesibilidad AA", "Analítica + funnels"]}
-              price="$7,900 MXN"
-              primaryHref="#contacto"
-              secondaryHref="#proceso"
-              secondaryLabel="Ver proceso"
-            />
-
-            <ServiceCard
-              eyebrowIcon={<CartIcon />}
-              eyebrow="Tienda en línea básica"
-              title="Vende en digital sin complicarte"
-              desc="Catálogo inicial, checkout integrado y capacitación para administrar productos."
-              features={["Pasarelas de pago confiables", "Administración sencilla", "Preparado para escalar"]}
-              price="$10,900 MXN"
+              price="$1,500–$2,000 MXN"
               primaryHref="#contacto"
               secondaryHref="#faq"
               secondaryLabel="Dudas frecuentes"
             />
 
+            {/* Paquete Premium (del PDF) */}
             <ServiceCard
-              eyebrowIcon={<LayoutIcon />}
-              eyebrow="Rediseño & migración"
-              title="De Wix/WordPress a velocidad real"
-              desc="Migramos sin caídas a un stack moderno, seguro y fácil de mantener."
-              features={["0 interrupciones", "Mantenimiento simple", "Seguridad reforzada"]}
-              price="Plan a medida"
+              eyebrowIcon={<BuildingIcon />}
+              eyebrow="Paquete Premium"
+              title="Gestión y crecimiento continuo"
+              desc="Incluye todo lo del paquete estándar más mantenimiento mensual, optimización SEO básica, actualización de contenido y soporte técnico continuo."
+              features={[
+                "Todo lo del Estándar",
+                "Mantenimiento mensual",
+                "Optimización SEO básica",
+                "Actualización de contenido",
+                "Soporte técnico continuo",
+              ]}
+              price="Desde $3,000 MXN"
               primaryHref="#contacto"
-              primaryLabel="Evaluar mi migración"
-              secondaryHref="#proceso"
-              secondaryLabel="Cómo trabajamos"
+              secondaryHref="#faq"
+              secondaryLabel="Ver preguntas"
             />
           </div>
         </section>
@@ -212,7 +196,7 @@ function ServiceCard({
           <div className={styles.price}>
             <strong>{price}</strong>
             {price.includes("MXN") && (
-              <span className={styles.muted}> (desde)</span>
+              <span className={styles.muted}> (estimado)</span>
             )}
           </div>
           <div className={styles.actions}>

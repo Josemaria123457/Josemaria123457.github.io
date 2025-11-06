@@ -5,7 +5,7 @@ import styles from "./planes.module.css";
 export const metadata: Metadata = {
   title: "Planes y precios • PINONET",
   description:
-    "Planes de páginas web en MXN: landing, sitio corporativo, e-commerce y migraciones. Rendimiento, SEO y soporte incluidos.",
+    "Planes de páginas web en MXN con enfoque en rendimiento y calidad. Paquete Estándar y Paquete Premium según necesidades del proyecto.",
   alternates: { canonical: "/planes" },
 };
 
@@ -53,22 +53,22 @@ export default function PagePlanes() {
             <p className="lead">Facturación en MXN. Personalizamos cualquier plan a tus necesidades.</p>
 
             <div className={styles.grid}>
-              {/* Landing */}
+              {/* Paquete Estándar (según PDF) */}
               <article className={`${styles.card} ${styles.tier}`}>
                 <header className={styles.cardHead}>
-                  <span className={styles.kicker}>Emprende</span>
-                  <h3 className={styles.cardTitle}>Landing de alto impacto</h3>
-                  <p className={styles.cardSub}>Ideal para captar clientes con un solo objetivo.</p>
+                  <span className={styles.kicker}>Estándar</span>
+                  <h3 className={styles.cardTitle}>Sitio básico profesional</h3>
+                  <p className={styles.cardSub}>Diseño personalizado con secciones esenciales y configuración inicial.</p>
                 </header>
                 <div className={styles.priceRow}>
-                  <span className={styles.price}>$2,900 <small>MXN</small></span>
-                  <span className={styles.note}>(promedio 7 días)</span>
+                  <span className={styles.price}>$1,500–$2,000 <small>MXN</small></span>
+                  <span className={styles.note}>Entrega desde 7 días</span>
                 </div>
                 <ul className={styles.features} role="list">
-                  <li>Copy orientado a conversión</li>
-                  <li>WhatsApp/CTA + eventos</li>
-                  <li>SEO técnico base</li>
-                  <li>1 mes de soporte</li>
+                  <li>Hasta 5 secciones (inicio, servicios, contacto, galería, etc.)</li>
+                  <li>Diseño personalizado</li>
+                  <li>Dominio personalizado</li>
+                  <li>Alojamiento inicial</li>
                 </ul>
                 <div className={styles.actions}>
                   <a className="btn primary" href="#contacto">Solicitar propuesta</a>
@@ -76,79 +76,34 @@ export default function PagePlanes() {
                 </div>
               </article>
 
-              {/* Corporativo */}
+              {/* Paquete Premium (según PDF) */}
               <article className={`${styles.card} ${styles.tier} ${styles.recommended}`} aria-label="Plan recomendado">
                 <div className={styles.ribbon}>Recomendado</div>
                 <header className={styles.cardHead}>
-                  <span className={styles.kicker}>Negocio</span>
-                  <h3 className={styles.cardTitle}>Sitio 3–5 secciones</h3>
-                  <p className={styles.cardSub}>Presencia sólida con base escalable y blog opcional.</p>
+                  <span className={styles.kicker}>Premium</span>
+                  <h3 className={styles.cardTitle}>Gestión y crecimiento continuo</h3>
+                  <p className={styles.cardSub}>Todo lo del Estándar + mantenimiento y mejoras continuas.</p>
                 </header>
                 <div className={styles.priceRow}>
-                  <span className={styles.price}>$7,900 <small>MXN</small></span>
-                  <span className={styles.note}>Dominio + hosting 1er año*</span>
+                  <span className={styles.price}>Desde $3,000 <small>MXN</small></span>
+                  <span className={styles.note}>Plan mensual</span>
                 </div>
                 <ul className={styles.features} role="list">
-                  <li>Inicio, servicios, sobre nosotros y contacto</li>
-                  <li>Analítica con funnels</li>
-                  <li>Accesibilidad AA</li>
-                  <li>2 meses de soporte</li>
+                  <li>Incluye todo lo del Paquete Estándar</li>
+                  <li>Mantenimiento mensual</li>
+                  <li>Optimización SEO básica</li>
+                  <li>Actualización de contenido</li>
+                  <li>Soporte técnico continuo</li>
                 </ul>
                 <div className={styles.actions}>
                   <a className="btn primary" href="#contacto">Solicitar propuesta</a>
                   <Link className="btn" href="/#servicios">Ver detalles</Link>
-                </div>
-              </article>
-
-              {/* E-commerce */}
-              <article className={`${styles.card} ${styles.tier}`}>
-                <header className={styles.cardHead}>
-                  <span className={styles.kicker}>Vende online</span>
-                  <h3 className={styles.cardTitle}>E-commerce inicial</h3>
-                  <p className={styles.cardSub}>Catálogo base y checkout integrado para empezar a vender.</p>
-                </header>
-                <div className={styles.priceRow}>
-                  <span className={styles.price}>$10,900 <small>MXN</small></span>
-                  <span className={styles.note}>Escalable por módulos</span>
-                </div>
-                <ul className={styles.features} role="list">
-                  <li>Pasarelas de pago confiables</li>
-                  <li>Administración sencilla</li>
-                  <li>Capacitación incluida</li>
-                  <li>3 meses de soporte</li>
-                </ul>
-                <div className={styles.actions}>
-                  <a className="btn primary" href="#contacto">Solicitar propuesta</a>
-                  <Link className="btn" href="/#servicios">Ver detalles</Link>
-                </div>
-              </article>
-
-              {/* Migración */}
-              <article className={`${styles.card} ${styles.tier}`}>
-                <header className={styles.cardHead}>
-                  <span className={styles.kicker}>Upgrade</span>
-                  <h3 className={styles.cardTitle}>Rediseño & migración</h3>
-                  <p className={styles.cardSub}>De Wix/WordPress a un stack moderno, rápido y seguro.</p>
-                </header>
-                <div className={styles.priceRow}>
-                  <span className={styles.price}>Plan a medida</span>
-                  <span className={styles.note}>Sin caídas • Seguridad reforzada</span>
-                </div>
-                <ul className={styles.features} role="list">
-                  <li>Auditoría técnica inicial</li>
-                  <li>Migración sin interrupciones</li>
-                  <li>Mejoras de performance</li>
-                  <li>Mantenimiento simple</li>
-                </ul>
-                <div className={styles.actions}>
-                  <a className="btn primary" href="#contacto">Evaluar mi migración</a>
-                  <Link className="btn" href="/#proceso">Cómo trabajamos</Link>
                 </div>
               </article>
             </div>
 
             <p className={styles.micro}>
-              *Dominio y hosting incluidos el primer año en planes Negocio y E-commerce. Renovación con coste preferente.
+              Costos estimados: pueden variar según alcance y requerimientos del proyecto.
             </p>
           </div>
         </div>
@@ -163,20 +118,19 @@ export default function PagePlanes() {
             <div className={styles.table} role="table" aria-label="Comparativa de planes">
               <div className={styles.tr} role="row">
                 <div className={`${styles.th} ${styles.sticky}`} role="columnheader">Incluye</div>
-                <div className={styles.th} role="columnheader">Landing</div>
-                <div className={styles.th} role="columnheader">3–5 secciones</div>
-                <div className={styles.th} role="columnheader">E-commerce</div>
-                <div className={styles.th} role="columnheader">Migración</div>
+                <div className={styles.th} role="columnheader">Estándar</div>
+                <div className={styles.th} role="columnheader">Premium</div>
               </div>
 
               {[
-                ["Copy & diseño", "✓", "✓", "✓", "✓"],
-                ["SEO técnico base", "✓", "✓", "✓", "✓"],
-                ["Analítica con eventos", "✓", "✓", "✓", "✓"],
-                ["Blog/CMS", "—", "Opcional", "Opcional", "Opcional"],
-                ["Pago en línea", "—", "—", "✓", "Opcional"],
-                ["Dominio + hosting 1er año", "—", "✓", "✓", "Opcional"],
-                ["Soporte inicial", "1 mes", "2 meses", "3 meses", "A medida"],
+                ["Diseño personalizado", "✓", "✓"],
+                ["Hasta 5 secciones", "✓", "✓"],
+                ["Dominio personalizado", "✓", "✓"],
+                ["Alojamiento inicial", "✓", "✓"],
+                ["Mantenimiento mensual", "—", "✓"],
+                ["Optimización SEO básica", "—", "✓"],
+                ["Actualización de contenido", "—", "✓"],
+                ["Soporte técnico continuo", "—", "✓"],
               ].map((row, i) => (
                 <div className={`${styles.tr} ${i % 2 ? styles.alt : ""}`} role="row" key={i}>
                   {row.map((cell, j) =>
@@ -193,7 +147,7 @@ export default function PagePlanes() {
         </div>
       </section>
 
-      {/* ADD-ONS */}
+      {/* ADD-ONS (opcional, mantenemos igual) */}
       <section className="band-2" aria-labelledby="t-addons">
         <div className="container">
           <div className="surface">
@@ -242,27 +196,27 @@ export default function PagePlanes() {
             <h2 id="t-faq" className={styles.h2}>Preguntas frecuentes</h2>
             <div className={styles.faq}>
               <details className={styles.faqItem}>
-                <summary className={styles.faqQ}>¿Qué necesito para empezar?</summary>
+                <summary className={styles.faqQ}>¿Qué incluye el Paquete Estándar?</summary>
                 <p className={styles.faqA}>
-                  Tu logotipo y contenido básico (texto e imágenes). Si no los tienes, te guiamos paso a paso para crearlos.
+                  Hasta 5 secciones con diseño personalizado, dominio propio y alojamiento inicial. Ideal para iniciar con presencia sólida.
                 </p>
               </details>
               <details className={styles.faqItem}>
-                <summary className={styles.faqQ}>¿Incluye SEO?</summary>
+                <summary className={styles.faqQ}>¿Qué agrega el Paquete Premium?</summary>
                 <p className={styles.faqA}>
-                  Sí, configuración técnica inicial: metadatos, sitemap, etiquetas OG y performance base.
+                  Todo lo del Estándar más mantenimiento mensual, SEO básico, actualización de contenido y soporte técnico continuo.
                 </p>
               </details>
               <details className={styles.faqItem}>
-                <summary className={styles.faqQ}>¿Puedo crecer luego?</summary>
+                <summary className={styles.faqQ}>¿Los precios son fijos?</summary>
                 <p className={styles.faqA}>
-                  Claro. El stack es modular: podemos sumar secciones, blog, catálogo o integraciones sin rehacer el sitio.
+                  Son estimados y pueden variar según el alcance. Te compartimos una propuesta detallada antes de iniciar.
                 </p>
               </details>
               <details className={styles.faqItem}>
-                <summary className={styles.faqQ}>¿Cómo se paga?</summary>
+                <summary className={styles.faqQ}>¿Cómo es el proceso de pago?</summary>
                 <p className={styles.faqA}>
-                  Trabajamos con anticipo y contra-entrega. Emitimos factura MX si la necesitas.
+                  Trabajamos con anticipo y contra-entrega. Emitimos factura en MX si la requieres.
                 </p>
               </details>
             </div>
@@ -287,12 +241,110 @@ export default function PagePlanes() {
               >
                 WhatsApp
               </a>
-              <a className="btn" href="mailto:contactanos@pinonet.me">
-                Escribir correo
-              </a>
               <Link className="btn" href="/#proceso">
                 Ver proceso
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+            {/* CONTACTO */}
+      <section id="contacto" className="band-2">
+        <div className="container">
+          <div className="surface">
+            <h2>Hablemos de tu proyecto</h2>
+            <p className="lead">Cuéntanos objetivos, plazos y referencias. Respondemos en menos de 24 h.</p>
+
+            <div className="contact-wrap">
+              {/* FORMULARIO */}
+              <form
+                id="contacto-form"
+                className="card contact-form"
+                action="https://formsubmit.co/contactanos@pinonet.me"
+                method="POST"
+              >
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="Nueva solicitud PINONET" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="text" name="_honey" style={{ display: "none" }} />
+
+                <input type="hidden" name="_next" value="https://www.pinonet.me/gracias" />
+
+                <div className="field">
+                  <label htmlFor="c-nombre">Nombre <span className="req">*</span></label>
+                  <input id="c-nombre" name="nombre" required autoComplete="name" placeholder="Tu nombre" />
+                </div>
+
+                <div className="row two">
+                  <div className="field">
+                    <label htmlFor="c-correo">Correo <span className="req">*</span></label>
+                    <input id="c-correo" name="correo" type="email" required autoComplete="email" placeholder="tu@correo.com" />
+                  </div>
+                  <div className="field">
+                    <label htmlFor="c-whats">WhatsApp</label>
+                    <input id="c-whats" name="whatsapp" inputMode="tel" placeholder="+54 954 121 0879" />
+                  </div>
+                </div>
+
+                <div className="row two">
+                  <div className="field">
+                    <label htmlFor="c-tipo">Tipo de sitio</label>
+                    <select id="c-tipo" name="tipo" defaultValue="">
+                      <option value="" disabled>Elige una opción</option>
+                      <option>Paquete estándar</option>
+                      <option>Paquete Premium</option>
+                      <option>personalizado</option>
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label htmlFor="c-plazo">Plazo objetivo</label>
+                    <select id="c-plazo" name="plazo" defaultValue="">
+                      <option value="" disabled>Selecciona</option>
+                      <option>1 semana</option>
+                      <option>2–3 semanas</option>
+                      <option>no definido</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="field">
+                  <label htmlFor="c-mensaje">Mensaje <span className="req">*</span></label>
+                  <textarea
+                    id="c-mensaje"
+                    name="mensaje"
+                    rows={4}
+                    required
+                    placeholder="Objetivos, referencias y plazos"
+                  />
+                </div>
+
+                <label className="check">
+                  <input type="checkbox" name="acepta" required />
+                  <span className="check-text">Acepto el tratamiento de mis datos.</span>
+                </label>
+
+                <button className="btn primary" type="submit">Solicitar propuesta</button>
+                <p className="microcopy">
+                  También puedes escribir a <a href="mailto:contactanos@pinonet.me">contactanos@pinonet.me</a> o por{" "}
+                  <a href="https://wa.me/549541210879" target="_blank" rel="noopener">WhatsApp</a>.
+                </p>
+              </form>
+
+              {/* INFO */}
+              <aside className="card contact-info">
+                <h3>Contacto directo</h3>
+                <ul className="small info-list">
+                  <li>Email: <a href="mailto:contactanos@pinonet.me">contactanos@pinonet.me</a></li>
+                  <li>WhatsApp: <a href="https://wa.me/549541210879" target="_blank" rel="noopener">+54 954 121 0879</a></li>
+                  <li>Horario: Lun–Sáb 10:00–18:00</li>
+                  <li>Ubicación: Oaxaca, México (remoto a todo MX)</li>
+                </ul>
+
+                <div className="trust">
+                  <h4>Confianza</h4>
+                  <p>Más de 100 proyectos entregados con éxito.</p>
+                </div>
+              </aside>
             </div>
           </div>
         </div>
